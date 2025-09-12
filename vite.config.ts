@@ -19,15 +19,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: mode !== "production",
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@radix-ui/*', 'class-variance-authority', 'tailwind-merge']
-        }
-      }
-    }
+    sourcemap: mode !== "production"
   },
   preview: {
     port: 8080,
