@@ -13,11 +13,11 @@ export const bagsProducts: Product[] = [
     reviews: 156,
     stock: 18,
     tags: ['bestseller', 'premium'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -42,11 +42,11 @@ export const bagsProducts: Product[] = [
     reviews: 201,
     stock: 15,
     tags: ['bestseller', 'luxury'],
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Bags/3.jpg',
     images: [
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Bags/10.jpg',
+      '/images/Bags/10.jpg',
+      '/images/Bags/6.jpg'
     ],
     attrs: {
       color: 'Cognac',
@@ -71,11 +71,11 @@ export const bagsProducts: Product[] = [
     reviews: 187,
     stock: 22,
     tags: ['travel', 'new'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Navy Blue',
@@ -101,11 +101,11 @@ export const bagsProducts: Product[] = [
     reviews: 156,
     stock: 35,
     tags: ['bestseller'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -131,11 +131,11 @@ export const bagsProducts: Product[] = [
     reviews: 198,
     stock: 12,
     tags: ['luxury', 'office'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Dark Brown',
@@ -161,11 +161,11 @@ export const bagsProducts: Product[] = [
     reviews: 176,
     stock: 18,
     tags: ['travel', 'bestseller'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Charcoal',
@@ -191,11 +191,11 @@ export const bagsProducts: Product[] = [
     reviews: 198,
     stock: 45,
     tags: ['eco-friendly'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Natural',
@@ -220,11 +220,11 @@ export const bagsProducts: Product[] = [
     reviews: 145,
     stock: 10,
     tags: ['luxury', 'office'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -250,11 +250,11 @@ export const bagsProducts: Product[] = [
     reviews: 167,
     stock: 28,
     tags: ['bestseller'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Burgundy',
@@ -280,11 +280,11 @@ export const bagsProducts: Product[] = [
     reviews: 154,
     stock: 32,
     tags: ['sports'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Black/Red',
@@ -310,11 +310,11 @@ export const bagsProducts: Product[] = [
     reviews: 132,
     stock: 20,
     tags: ['evening', 'luxury'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -339,11 +339,11 @@ export const bagsProducts: Product[] = [
     reviews: 187,
     stock: 25,
     tags: ['bestseller', 'versatile'],
-    image: '/images/products/bags/1.png',
+    image: '/images/Bags/1.jpg',
     images: [
-      '/images/products/bags/1.png',
-      '/images/products/bags/2.png',
-      '/images/products/bags/3.png'
+      '/images/Bags/1.jpg',
+      '/images/Bags/2.jpg',
+      '/images/Bags/3.jpg'
     ],
     attrs: {
       color: 'Taupe',

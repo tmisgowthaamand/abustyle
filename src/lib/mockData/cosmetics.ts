@@ -13,11 +13,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 124,
     stock: 45,
     tags: ['bestseller', 'new'],
-    image: '/images/products/cosmetics/1.png',
+    image: '/images/Cosmetics/5.jpg',
     images: [
-      '/images/products/cosmetics/1.png',
-      '/images/products/cosmetics/2.png',
-      '/images/products/cosmetics/3.png'
+      '/images/Cosmetics/5.jpg',
+      '/images/Cosmetics/6.jpg',
+      '/images/Cosmetics/10.jpg'
     ],
     attrs: {
       color: 'Ruby Red',
@@ -39,11 +39,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 89,
     stock: 32,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1571781926295-d1de334ffd3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/10.jpg',
     images: [
-      'https://images.unsplash.com/photo-1571781926295-d1de334ffd3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1571781926295-d1de334ffd3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1571781926295-d1de334ffd3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/2.jpg',
+      '/images/Cosmetics/3.jpg',
+      '/images/Cosmetics/4.jpg'
     ],
     attrs: {
       color: 'Beige',
@@ -66,11 +66,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 215,
     stock: 67,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/5.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/10.jpg',
+      '/images/Cosmetics/11.jpg',
+      '/images/Cosmetics/8.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -92,11 +92,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 178,
     stock: 28,
     tags: ['new'],
-    image: 'https://images.unsplash.com/photo-1533050487297-8874e4161348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/4.jpg',
     images: [
-      'https://images.unsplash.com/photo-1533050487297-8874e4161348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1533050487297-8874e4161348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1533050487297-8874e4161348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/4.jpg',
+      '/images/Cosmetics/5.jpg',
+      '/images/Cosmetics/6.jpg'
     ],
     attrs: {
       shades: '12',
@@ -118,11 +118,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 93,
     stock: 41,
     tags: [],
-    image: 'https://images.unsplash.com/photo-1611758228041-0b9d38a6a29a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/12.jpg',
     images: [
-      'https://images.unsplash.com/photo-1611758228041-0b9d38a6a29a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1611758228041-0b9d38a6a29a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1611758228041-0b9d38a6a29a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/9.jpg',
+      '/images/Cosmetics/2.jpg',
+      '/images/Cosmetics/2.jpg'
     ],
     attrs: {
       volume: '30ml',
@@ -144,11 +144,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 156,
     stock: 38,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/12.jpg',
+      '/images/Cosmetics/11.jpg',
+      '/images/Cosmetics/10.jpg'
     ],
     attrs: {
       color: 'Nude',
@@ -171,11 +171,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 201,
     stock: 29,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/12.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/12.jpg',
+      '/images/Cosmetics/3.jpg',
+      '/images/Cosmetics/10.jpg'
     ],
     attrs: {
       color: 'Champagne',
@@ -198,11 +198,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 187,
     stock: 53,
     tags: [],
-    image: 'https://images.unsplash.com/photo-1625772459861-97d41a5ec241?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1625772459861-97d41a5ec241?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1625772459861-97d41a5ec241?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1625772459861-97d41a5ec241?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/11.jpg',
+      '/images/Cosmetics/10.jpg',
+      '/images/Cosmetics/12.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -225,11 +225,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 142,
     stock: 47,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/11.jpg',
+      '/images/Cosmetics/8.jpg',
+      '/images/Cosmetics/4.jpg'
     ],
     attrs: {
       color: 'Medium Brown',
@@ -252,11 +252,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 98,
     stock: 36,
     tags: ['new'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/10.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/6.jpg',
+      '/images/Cosmetics/1.jpg',
+      '/images/Cosmetics/5.jpg'
     ],
     attrs: {
       color: 'Rose Gold',
@@ -279,11 +279,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 167,
     stock: 52,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/6.jpg',
+      '/images/Cosmetics/11.jpg',
+      '/images/Cosmetics/5.jpg'
     ],
     attrs: {
       volume: '100ml',
@@ -306,11 +306,11 @@ export const cosmeticsProducts: Product[] = [
     reviews: 134,
     stock: 24,
     tags: ['new', 'bestseller'],
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Cosmetics/10.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Cosmetics/9.jpg',
+      '/images/Cosmetics/10.jpg',
+      '/images/Cosmetics/2.jpg'
     ],
     attrs: {
       colors: '3',
@@ -320,5 +320,32 @@ export const cosmeticsProducts: Product[] = [
     },
     createdAt: '2023-03-15T09:45:00Z',
     updatedAt: '2023-03-15T09:45:00Z'
+  },
+  {
+    id: 'c13',
+    category: 'cosmetics',
+    title: 'Makeup Brush Set - Professional Collection',
+    description: 'Complete 12-piece professional makeup brush set with premium synthetic bristles',
+    brand: 'Beauty Pro',
+    price: 4999,
+    compareAtPrice: 6999,
+    rating: 4.9,
+    reviews: 245,
+    stock: 18,
+    tags: ['bestseller', 'professional'],
+    image: '/images/Cosmetics/12.jpg',
+    images: [
+      '/images/Cosmetics/12.jpg',
+      '/images/Cosmetics/11.jpg',
+      '/images/Cosmetics/10.jpg'
+    ],
+    attrs: {
+      pieces: '12',
+      bristleType: 'Synthetic',
+      includes: 'Storage Case',
+      crueltyFree: 'Yes'
+    },
+    createdAt: '2023-03-20T12:00:00Z',
+    updatedAt: '2023-03-20T12:00:00Z'
   }
 ];

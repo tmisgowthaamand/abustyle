@@ -13,11 +13,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 215,
     stock: 25,
     tags: ['bestseller', 'luxury'],
-    image: '/images/products/accessories/1.png',
+    image: '/images/Accessories/1.jpg',
     images: [
-      '/images/products/accessories/1.png',
-      '/images/products/accessories/2.png',
-      '/images/products/accessories/3.png'
+      '/images/Accessories/1.jpg',
+      '/images/Accessories/2.jpg',
+      '/images/Accessories/3.jpg'
     ],
     attrs: {
       color: 'Brown',
@@ -40,11 +40,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 187,
     stock: 32,
     tags: ['bestseller', 'minimalist'],
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/3.jpg',
+      '/images/Accessories/5.jpg',
+      '/images/Accessories/2.jpg'
     ],
     attrs: {
       material: 'Sterling Silver',
@@ -67,11 +67,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 156,
     stock: 45,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/4.jpg',
     images: [
-      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/9.jpg',
+      '/images/Accessories/7.jpg',
+      '/images/Accessories/6.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -94,11 +94,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 234,
     stock: 28,
     tags: ['bestseller', 'new'],
-    image: 'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/5.jpg',
     images: [
-      'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/8.jpg',
+      '/images/Accessories/11.jpg',
+      '/images/Accessories/1.jpg'
     ],
     attrs: {
       color: 'Gold/Green',
@@ -122,11 +122,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 143,
     stock: 22,
     tags: ['luxury'],
-    image: 'https://images.unsplash.com/photo-1583947581924-a906d617a3cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/12.jpg',
     images: [
-      'https://images.unsplash.com/photo-1583947581924-a906d617a3cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1583947581924-a906d617a3cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1583947581924-a906d617a3cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/10.jpg',
+      '/images/Accessories/3.jpg',
+      '/images/Accessories/6.jpg'
     ],
     attrs: {
       material: '100% Mulberry Silk',
@@ -149,11 +149,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 198,
     stock: 35,
     tags: ['bestseller', 'smart'],
-    image: 'https://images.unsplash.com/photo-1575311373939-9a9d9c144738?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/4.jpg',
     images: [
-      'https://images.unsplash.com/photo-1575311373939-9a9d9c144738?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1575311373939-9a9d9c144738?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1575311373939-9a9d9c144738?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/11.jpg',
+      '/images/Accessories/12.jpg',
+      '/images/Accessories/11.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -177,11 +177,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 176,
     stock: 40,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/7.jpg',
     images: [
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/2.jpg',
+      '/images/Accessories/5.jpg',
+      '/images/Accessories/11.jpg'
     ],
     attrs: {
       color: 'Brown',
@@ -205,11 +205,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 201,
     stock: 28,
     tags: ['luxury', 'winter'],
-    image: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/8.jpg',
     images: [
-      'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/4.jpg',
+      '/images/Accessories/4.jpg',
+      '/images/Accessories/9.jpg'
     ],
     attrs: {
       color: 'Navy Blue',
@@ -233,11 +233,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 189,
     stock: 31,
     tags: ['bestseller', 'minimalist'],
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/3.jpg',
     images: [
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/7.jpg',
+      '/images/Accessories/2.jpg',
+      '/images/Accessories/2.jpg'
     ],
     attrs: {
       material: '14K Gold Plated',
@@ -261,11 +261,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 167,
     stock: 38,
     tags: ['travel'],
-    image: 'https://images.unsplash.com/photo-1552733407-5d6c459f07f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/6.jpg',
     images: [
-      'https://images.unsplash.com/photo-1552733407-5d6c459f07f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1552733407-5d6c459f07f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1552733407-5d6c459f07f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/10.jpg',
+      '/images/Accessories/8.jpg',
+      '/images/Accessories/5.jpg'
     ],
     attrs: {
       color: 'Black',
@@ -289,11 +289,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 201,
     stock: 24,
     tags: ['luxury', 'classic'],
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/8.jpg',
     images: [
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/1.jpg',
+      '/images/Accessories/12.jpg',
+      '/images/Accessories/10.jpg'
     ],
     attrs: {
       pearlType: 'Freshwater',
@@ -317,11 +317,11 @@ export const accessoriesProducts: Product[] = [
     reviews: 213,
     stock: 50,
     tags: ['personalized'],
-    image: 'https://images.unsplash.com/photo-1584917865412-9dd03d764c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Accessories/2.jpg',
     images: [
-      'https://images.unsplash.com/photo-1584917865412-9dd03d764c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1584917865412-9dd03d764c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1584917865412-9dd03d764c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Accessories/8.jpg',
+      '/images/Accessories/1.jpg',
+      '/images/Accessories/5.jpg'
     ],
     attrs: {
       material: 'Genuine Leather',

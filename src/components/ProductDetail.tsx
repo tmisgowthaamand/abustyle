@@ -18,6 +18,7 @@ interface ProductDetailProps {
 export default function ProductDetail({ product }: ProductDetailProps) {
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(0);
   const navigate = useNavigate();
   const { addToCart } = useCartContext();
   
@@ -112,7 +113,37 @@ export default function ProductDetail({ product }: ProductDetailProps) {
           Back to {product.category}
         </Button>
         
-        <div className="max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Product Images */}
+          <div className="space-y-4">
+            <div className="aspect-square bg-gray-50 rounded-lg overflow-hidden">
+              <img
+                src={product.images?.[selectedImage] || product.image}
+                alt={product.title}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            {product.images && product.images.length > 1 && (
+              <div className="grid grid-cols-4 gap-2">
+                {product.images.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(index)}
+                    className={`aspect-square bg-gray-50 rounded-md overflow-hidden border-2 transition-colors ${
+                      selectedImage === index ? 'border-primary' : 'border-transparent hover:border-gray-300'
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`${product.title} ${index + 1}`}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Product Info */}
           <div>
             <h1 className="text-3xl font-bold tracking-tight text-foreground">

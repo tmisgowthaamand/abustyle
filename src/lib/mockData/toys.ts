@@ -13,11 +13,11 @@ export const toysProducts: Product[] = [
     reviews: 89,
     stock: 30,
     tags: ['bestseller', 'educational'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '3+ years',
@@ -39,11 +39,11 @@ export const toysProducts: Product[] = [
     reviews: 124,
     stock: 25,
     tags: ['bestseller', 'new'],
-    image: 'https://images.unsplash.com/photo-1553456554-9c6f7be2bbd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Toys/1.jpg',
     images: [
-      'https://images.unsplash.com/photo-1553456554-9c6f7be2bbd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1553456554-9c6f7be2bbd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1553456554-9c6f7be2bbd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Toys/11.jpg',
+      '/images/Toys/12.jpg',
+      '/images/Toys/4.jpg'
     ],
     attrs: {
       ageRange: '6+ years',
@@ -66,11 +66,11 @@ export const toysProducts: Product[] = [
     reviews: 215,
     stock: 42,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Toys/7.jpg',
     images: [
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Toys/7.jpg',
+      '/images/Toys/6.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '0+ years',
@@ -93,11 +93,11 @@ export const toysProducts: Product[] = [
     reviews: 178,
     stock: 18,
     tags: ['educational'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '8+ years',
@@ -120,11 +120,11 @@ export const toysProducts: Product[] = [
     reviews: 156,
     stock: 32,
     tags: ['educational'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '10+ years',
@@ -147,11 +147,11 @@ export const toysProducts: Product[] = [
     reviews: 201,
     stock: 12,
     tags: ['bestseller', 'new'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '4+ years',
@@ -175,11 +175,11 @@ export const toysProducts: Product[] = [
     reviews: 98,
     stock: 15,
     tags: ['new'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '6+ years',
@@ -203,11 +203,11 @@ export const toysProducts: Product[] = [
     reviews: 187,
     stock: 28,
     tags: ['bestseller', 'educational'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '5+ years',
@@ -230,11 +230,11 @@ export const toysProducts: Product[] = [
     reviews: 156,
     stock: 20,
     tags: ['bestseller'],
-    image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    image: '/images/Toys/9.jpg',
     images: [
-      'https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      'https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      '/images/Toys/6.jpg',
+      '/images/Toys/11.jpg',
+      '/images/Toys/8.jpg'
     ],
     attrs: {
       ageRange: '14+ years',
@@ -258,11 +258,11 @@ export const toysProducts: Product[] = [
     reviews: 245,
     stock: 18,
     tags: ['bestseller', 'educational'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '7-12 years',
@@ -286,11 +286,11 @@ export const toysProducts: Product[] = [
     reviews: 198,
     stock: 35,
     tags: ['seasonal'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '6+ years',
@@ -314,11 +314,11 @@ export const toysProducts: Product[] = [
     reviews: 167,
     stock: 22,
     tags: ['bestseller'],
-    image: '/images/products/toys/1.png',
+    image: '/images/Toys/1.jpg',
     images: [
-      '/images/products/toys/1.png',
-      '/images/products/toys/2.png',
-      '/images/products/toys/3.png'
+      '/images/Toys/1.jpg',
+      '/images/Toys/2.jpg',
+      '/images/Toys/3.jpg'
     ],
     attrs: {
       ageRange: '8+ years',
