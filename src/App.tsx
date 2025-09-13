@@ -12,9 +12,13 @@ import Accessories from "./pages/Accessories";
 import Bags from "./pages/Bags";
 import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
-import ProductDetailPage from "./pages/ProductDetailPage";
+import Orders from "./pages/Orders";
+import OrderDetails from "./pages/OrderDetails";
+import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 import TermsAndConditions from "./pages/policies/TermsAndConditions";
 import ShippingPolicy from "./pages/policies/ShippingPolicy";
 import CancellationRefundPolicy from "./pages/policies/CancellationRefundPolicy";
@@ -38,7 +42,13 @@ const App = () => (
             <Route path="/bags" element={<Bags />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/order-confirmation" element={<OrderConfirmation />} />
-            <Route path="/product/:category/:id" element={<ProductDetailPage />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/order/:orderId" element={<OrderDetails />} />
+            <Route path="/product/:category/:id" element={<ProductDetail />} />
+            
+            {/* Account Routes */}
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
             
             {/* Footer Links */}
             <Route path="/contact" element={<div>Contact Page</div>} />

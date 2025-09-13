@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { CategoryHero } from "@/components/CategoryHero";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 import { Product } from '@/types/product';
 
@@ -16,16 +18,14 @@ const mockProducts: Product[] = [
     title: "Classic Leather Tote Bag",
     description: "Handcrafted genuine leather tote bag with spacious interior",
     brand: "LeatherCraft",
-    price: 149.99,
-    compareAtPrice: 199.99,
+    price: 14999,
+    compareAtPrice: 19999,
     rating: 4.7,
     reviews: 89,
     stock: 25,
-    image: "/images/products/bags/1.png",
+    image: "/images/Bags/1.jpg",
     images: [
-      "/images/products/bags/1.png",
-      "/images/products/bags/2.png",
-      "/images/products/bags/3.png"
+      "/images/Bags/1.jpg"
     ],
     tags: ["leather", "tote", "handbag"],
     attrs: {
@@ -42,14 +42,14 @@ const mockProducts: Product[] = [
     title: "Minimalist Backpack",
     description: "Sleek and functional backpack for everyday use",
     brand: "UrbanWear",
-    price: 89.99,
-    compareAtPrice: 119.99,
+    price: 8999,
+    compareAtPrice: 11999,
     rating: 4.5,
     reviews: 124,
     stock: 40,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Bags/2.jpg",
     images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/2.jpg"
     ],
     tags: ["backpack", "minimalist", "casual"],
     attrs: {
@@ -66,14 +66,14 @@ const mockProducts: Product[] = [
     title: "Designer Crossbody Bag",
     description: "Elegant crossbody bag with adjustable strap",
     brand: "ChicStyle",
-    price: 129.99,
-    compareAtPrice: 159.99,
+    price: 12999,
+    compareAtPrice: 15999,
     rating: 4.8,
     reviews: 156,
     stock: 35,
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Bags/3.jpg",
     images: [
-      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/3.jpg"
     ],
     tags: ["crossbody", "designer", "fashion"],
     attrs: {
@@ -90,14 +90,14 @@ const mockProducts: Product[] = [
     title: "Laptop Backpack with USB Port",
     description: "Modern backpack with USB charging port and laptop compartment",
     brand: "TechGear",
-    price: 59.99,
-    compareAtPrice: 79.99,
+    price: 5999,
+    compareAtPrice: 7999,
     rating: 4.6,
     reviews: 342,
     stock: 50,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Bags/4.jpg",
     images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/4.jpg"
     ],
     tags: ["backpack", "laptop", "tech"],
     attrs: {
@@ -114,14 +114,14 @@ const mockProducts: Product[] = [
     title: "Leather Satchel Bag",
     description: "Vintage-style leather satchel with adjustable strap",
     brand: "Heritage",
-    price: 169.99,
-    compareAtPrice: 199.99,
+    price: 16999,
+    compareAtPrice: 19999,
     rating: 4.9,
     reviews: 98,
     stock: 20,
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Bags/5.jpg",
     images: [
-      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/5.jpg"
     ],
     tags: ["satchel", "leather", "vintage"],
     attrs: {
@@ -138,14 +138,14 @@ const mockProducts: Product[] = [
     title: "Beach Tote Bag",
     description: "Spacious beach tote with zippered pocket",
     brand: "SunnyDays",
-    price: 34.99,
-    compareAtPrice: 44.99,
+    price: 3499,
+    compareAtPrice: 4499,
     rating: 4.4,
     reviews: 215,
     stock: 65,
-    image: "https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Bags/6.jpg",
     images: [
-      "https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/6.jpg"
     ],
     tags: ["beach", "tote", "summer"],
     attrs: {
@@ -157,19 +157,19 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-15T13:20:00Z'
   },
   {
-    id: "b7",
+    id: "b12",
     category: 'bags',
-    title: "Leather Crossbody Bag",
-    description: "Slim and elegant crossbody bag with multiple compartments",
-    brand: "Minimalist",
-    price: 79.99,
-    compareAtPrice: 99.99,
-    rating: 4.7,
-    reviews: 187,
-    stock: 30,
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    title: "Luxury Handbag",
+    description: "Premium leather handbag with gold hardware",
+    brand: "Luxe",
+    price: 29999,
+    compareAtPrice: 39999,
+    rating: 4.9,
+    reviews: 76,
+    stock: 15,
+    image: "/images/Bags/13.jpg",
     images: [
-      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/13.jpg"
     ],
     tags: ["crossbody", "leather", "minimalist"],
     attrs: {
@@ -181,19 +181,19 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-18T10:10:00Z'
   },
   {
-    id: "b8",
+    id: "b7",
     category: 'bags',
     title: "Travel Duffel Bag",
-    description: "Spacious duffel bag with shoe compartment",
-    brand: "Voyager",
-    price: 69.99,
-    compareAtPrice: 89.99,
-    rating: 4.5,
-    reviews: 276,
-    stock: 45,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    description: "Large capacity duffel bag for travel and sports",
+    brand: "Wanderer",
+    price: 7999,
+    compareAtPrice: 9999,
+    rating: 4.3,
+    reviews: 167,
+    stock: 30,
+    image: "/images/Bags/7.jpg",
     images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/7.jpg"
     ],
     tags: ["duffel", "travel", "gym"],
     attrs: {
@@ -207,17 +207,17 @@ const mockProducts: Product[] = [
   {
     id: "b9",
     category: 'bags',
-    title: "Leather Clutch Purse",
-    description: "Elegant evening clutch with detachable chain",
-    brand: "EveningChic",
-    price: 59.99,
-    compareAtPrice: 79.99,
+    title: "Evening Clutch Bag",
+    description: "Elegant clutch bag perfect for evening events",
+    brand: "Glamour",
+    price: 8999,
+    compareAtPrice: 10999,
     rating: 4.6,
-    reviews: 143,
-    stock: 38,
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    reviews: 134,
+    stock: 28,
+    image: "/images/Bags/9.jpg",
     images: [
-      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/9.jpg"
     ],
     tags: ["clutch", "evening", "dressy"],
     attrs: {
@@ -225,71 +225,23 @@ const mockProducts: Product[] = [
       style: "Clutch",
       color: "Gold"
     },
-    createdAt: '2023-02-12T14:20:00Z',
-    updatedAt: '2023-02-12T14:20:00Z'
-  },
-  {
-    id: "b10",
-    category: 'bags',
-    title: "Canvas Tote Bag",
-    description: "Eco-friendly canvas tote with reinforced handles",
-    brand: "EcoChic",
-    price: 24.99,
-    compareAtPrice: 34.99,
-    rating: 4.3,
-    reviews: 312,
-    stock: 75,
-    image: "https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-    ],
-    tags: ["canvas", "tote", "eco-friendly"],
-    attrs: {
-      material: "Organic Cotton Canvas",
-      style: "Tote",
-      color: "Natural"
-    },
-    createdAt: '2023-01-08T11:15:00Z',
-    updatedAt: '2023-01-08T11:15:00Z'
-  },
-  {
-    id: "b11",
-    category: 'bags',
-    title: "Leather Backpack Purse",
-    description: "Convertible backpack that transforms into a stylish purse",
-    brand: "ConvertiBag",
-    price: 129.99,
-    compareAtPrice: 159.99,
-    rating: 4.8,
-    reviews: 201,
-    stock: 28,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-    ],
-    tags: ["backpack", "convertible", "purse"],
-    attrs: {
-      material: "Genuine Leather",
-      style: "Convertible Backpack/Purse",
-      color: "Burgundy"
-    },
     createdAt: '2023-02-22T09:40:00Z',
     updatedAt: '2023-02-22T09:40:00Z'
   },
   {
-    id: "b12",
+    id: "b11",
     category: 'bags',
-    title: "Mini Backpack Purse",
-    description: "Trendy mini backpack with adjustable straps",
-    brand: "UrbanChic",
-    price: 49.99,
-    compareAtPrice: 69.99,
-    rating: 4.7,
-    reviews: 267,
-    stock: 55,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    title: "Hiking Backpack",
+    description: "Waterproof hiking backpack with multiple compartments",
+    brand: "OutdoorPro",
+    price: 11999,
+    compareAtPrice: 14999,
+    rating: 4.8,
+    reviews: 243,
+    stock: 22,
+    image: "/images/Bags/10.jpg",
     images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Bags/10.jpg"
     ],
     tags: ["mini", "backpack", "trendy"],
     attrs: {
@@ -299,14 +251,63 @@ const mockProducts: Product[] = [
     },
     createdAt: '2023-02-08T13:25:00Z',
     updatedAt: '2023-02-08T13:25:00Z'
+  },
+  {
+    id: "b8",
+    category: 'bags',
+    title: "Gym Bag with Shoe Compartment",
+    description: "Compact gym bag with separate shoe compartment",
+    brand: "FitLife",
+    price: 4499,
+    compareAtPrice: 5999,
+    rating: 4.5,
+    reviews: 298,
+    stock: 45,
+    image: "/images/Bags/11.jpg",
+    images: [
+      "/images/Bags/11.jpg"
+    ],
+    tags: ["gym", "sports", "compartment"],
+    attrs: {
+      material: "Polyester",
+      style: "Gym Bag",
+      color: "Black"
+    },
+    createdAt: '2023-02-18T10:10:00Z',
+    updatedAt: '2023-02-18T10:10:00Z'
+  },
+  {
+    id: "b10",
+    category: 'bags',
+    title: "Canvas Messenger Bag",
+    description: "Durable canvas messenger bag with laptop sleeve",
+    brand: "Vintage Co",
+    price: 6999,
+    compareAtPrice: 8999,
+    rating: 4.4,
+    reviews: 187,
+    stock: 38,
+    image: "/images/Bags/12.jpg",
+    images: [
+      "/images/Bags/12.jpg"
+    ],
+    tags: ["messenger", "canvas", "laptop"],
+    attrs: {
+      material: "Canvas",
+      style: "Messenger",
+      color: "Khaki"
+    },
+    createdAt: '2023-02-08T13:25:00Z',
+    updatedAt: '2023-02-08T13:25:00Z'
   }
 ];
 
 const BAGS_ACCENT = "#8B4513";
 
 export default function Bags() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sortOption, setSortOption] = useState("featured");
+  const navigate = useNavigate();
 
   // Sort options configuration
 
@@ -341,13 +342,23 @@ export default function Bags() {
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Bags" },
-          ]}
-          className="mb-6"
-        />
+        <div className="flex items-center gap-4 mb-6">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back
+          </Button>
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Bags" },
+            ]}
+          />
+        </div>
 
         <div className="w-full">
           {/* Sort bar */}
@@ -370,14 +381,16 @@ export default function Bags() {
           </div>
 
             {/* Product grid */}
-            <ProductGrid
-              products={mockProducts}
-              columnsDesktop={3}
-              ratio="portrait"
-              emptyStateTitle="No bags found"
-              emptyStateDescription="Try adjusting your search to find what you're looking for."
-              categoryAccent={BAGS_ACCENT}
-            />
+            <div data-products-section>
+              <ProductGrid
+                products={mockProducts}
+                columnsDesktop={3}
+                ratio="square"
+                emptyStateTitle="No bags found"
+                emptyStateDescription="Try adjusting your search to find what you're looking for."
+                categoryAccent={BAGS_ACCENT}
+              />
+            </div>
           </div>
       </main>
     </Layout>

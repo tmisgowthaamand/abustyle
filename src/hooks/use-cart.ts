@@ -140,48 +140,52 @@ export function useCart(): UseCartReturn {
   }): Promise<void> => {
     const qty = product.quantity || 1;
     
-    try {
-      setCartItems(prevItems => {
-        const existingItemIndex = prevItems.findIndex(item => item.productId === product.id);
-        
-        if (existingItemIndex >= 0) {
-          // Update quantity if product exists
-          const updatedItems = prevItems.map((item, index) => 
-            index === existingItemIndex
-              ? { ...item, qty: item.qty + qty }
-              : item
-          );
+    return new Promise((resolve, reject) => {
+      try {
+        setCartItems(prevItems => {
+          const existingItemIndex = prevItems.findIndex(item => item.productId === product.id);
           
-          toast.success('Updated cart', {
-            description: `Updated quantity of ${product.name} in your cart`
+          if (existingItemIndex >= 0) {
+            // Update quantity if product exists
+            const updatedItems = prevItems.map((item, index) => 
+              index === existingItemIndex
+                ? { ...item, qty: item.qty + qty }
+                : item
+            );
+            
+            toast.success('Updated cart', {
+              description: `Updated quantity of ${product.name} in your cart`
+            });
+            
+            resolve();
+            return updatedItems;
+          }
+          
+          // Add new item
+          const newItem: CartItem = {
+            id: `${product.id}-${Date.now()}`,
+            productId: product.id,
+            title: product.name,
+            price: product.price,
+            image: product.image || '/images/placeholder.svg',
+            qty: qty,
+            stock: 100, // Default stock value
+            attrs: {}
+          };
+          
+          toast.success('Added to cart', {
+            description: `${product.name} has been added to your cart`
           });
           
-          return updatedItems;
-        }
-        
-        // Add new item
-        const newItem: CartItem = {
-          id: `${product.id}-${Date.now()}`,
-          productId: product.id,
-          title: product.name,
-          price: product.price,
-          image: product.image || '/images/placeholder.svg',
-          qty: qty,
-          stock: 100, // Default stock value
-          attrs: {}
-        };
-        
-        toast.success('Added to cart', {
-          description: `${product.name} has been added to your cart`
+          resolve();
+          return [...prevItems, newItem];
         });
-        
-        return [...prevItems, newItem];
-      });
-    } catch (error) {
-      console.error('Error adding to cart:', error);
-      toast.error('Failed to add item to cart');
-      throw error;
-    }
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+        toast.error('Failed to add item to cart');
+        reject(error);
+      }
+    });
   };
   
   // Remove item from cart

@@ -1,12 +1,28 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export default function CancellationRefundPolicy() {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     document.title = 'Cancellation & Refund Policy | ABU Accessories';
   }, []);
 
   return (
     <main className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="flex items-center gap-4 mb-6">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back
+        </Button>
+      </div>
       <h1 className="text-4xl font-bold mb-8">Cancellation & Refund Policy</h1>
       <p className="mb-6 text-muted-foreground">Fair, Simple & Customer-Focused</p>
       

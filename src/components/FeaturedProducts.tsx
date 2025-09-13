@@ -11,7 +11,7 @@ const FeaturedProducts = () => {
       compareAtPrice: 3499,
       category: "cosmetics" as ProductCategory,
       tags: ["New", "Bestseller"],
-      image: "/images/products/cosmetics/1.png",
+      image: "/images/Home/1.jpg",
       rating: 4.8,
       reviews: 124,
       isHero: true,
@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
       compareAtPrice: 2599,
       category: "toys" as ProductCategory,
       tags: ["Educational", "Bestseller"],
-      image: "/images/products/toys/1.png",
+      image: "/images/Home/2.jpg",
       rating: 4.7,
       reviews: 89,
     },
@@ -34,7 +34,7 @@ const FeaturedProducts = () => {
       compareAtPrice: 8499,
       category: "accessories" as ProductCategory,
       tags: ["New", "Luxury"],
-      image: "/images/products/accessories/1.png",
+      image: "/images/Accessories/2.jpg",
       rating: 4.9,
       reviews: 156,
     },
@@ -45,7 +45,7 @@ const FeaturedProducts = () => {
       compareAtPrice: 10999,
       category: "bags" as ProductCategory,
       tags: ["Premium", "Handmade"],
-      image: "/images/products/bags/1.png",
+      image: "/images/Home/4.jpg",
       rating: 4.8,
       reviews: 203,
     },
@@ -56,7 +56,7 @@ const FeaturedProducts = () => {
       compareAtPrice: 2999,
       category: "toys" as ProductCategory,
       tags: ["Soft", "Cuddly"],
-      image: "/images/products/toys/2.png",
+      image: "/images/Toys/2.jpg",
       rating: 4.6,
       reviews: 78,
     },
@@ -67,7 +67,7 @@ const FeaturedProducts = () => {
       compareAtPrice: 19999,
       category: "accessories" as ProductCategory,
       tags: ["Luxury", "Elegant"],
-      image: "/images/products/accessories/2.png",
+      image: "/images/Home/3.jpg",
       rating: 4.9,
       reviews: 142,
     },
@@ -88,34 +88,20 @@ const FeaturedProducts = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Hero Product */}
-          {heroProduct && (
-            <div className="lg:col-span-1 lg:row-span-2">
-              <ProductCard
-                {...heroProduct}
-                name={heroProduct.title}
-                className="h-full"
-                categoryAccent="#e11d48"
-              />
-            </div>
-          )}
-
-          {/* Other Products Grid */}
-          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {otherProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                {...product}
-                name={product.title}
-                categoryAccent={
-                  product.category === 'cosmetics' ? '#e11d48' :
-                  product.category === 'toys' ? '#3b82f6' :
-                  product.category === 'accessories' ? '#10b981' : '#8b5cf6'
-                }
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              {...product}
+              name={product.title}
+              ratio="square"
+              categoryAccent={
+                product.category === 'cosmetics' ? '#e11d48' :
+                product.category === 'toys' ? '#3b82f6' :
+                product.category === 'accessories' ? '#10b981' : '#8b5cf6'
+              }
+            />
+          ))}
         </div>
       </div>
     </section>

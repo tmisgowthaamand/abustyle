@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { CategoryHero } from "@/components/CategoryHero";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Loader2 } from "lucide-react";
 import type { Product } from "@/types/product";
 
 const COSMETICS_ACCENT = "#E75480";
@@ -27,14 +28,14 @@ const mockProducts: Product[] = [
     title: 'Matte Lipstick - Ruby Red',
     description: 'Long-lasting matte lipstick with intense color payoff',
     brand: 'Glamour Cosmetics',
-    price: 24.99,
-    compareAtPrice: 29.99,
+    price: 2499,
+    compareAtPrice: 2999,
     rating: 4.8,
     reviews: 156,
     stock: 45,
-    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/1.jpg',
     images: [
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/1.jpg'
     ],
     tags: ['lipstick', 'matte', 'makeup', 'long-lasting'],
     attrs: {
@@ -52,14 +53,14 @@ const mockProducts: Product[] = [
     title: 'Hydrating Foundation - Natural Beige',
     description: 'Lightweight foundation with hyaluronic acid for 24-hour hydration',
     brand: 'PureSkin',
-    price: 34.99,
-    compareAtPrice: 39.99,
+    price: 3499,
+    compareAtPrice: 3999,
     rating: 4.7,
     reviews: 289,
     stock: 32,
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67c53b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/2.jpg',
     images: [
-      'https://images.unsplash.com/photo-1572442388796-11668a67c53b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/2.jpg'
     ],
     tags: ['foundation', 'makeup', 'hydrating', 'skincare'],
     attrs: {
@@ -78,14 +79,14 @@ const mockProducts: Product[] = [
     title: 'Eyeshadow Palette - Nude Tones',
     description: 'Versatile 12-shade palette with matte and shimmer finishes',
     brand: 'Elegance',
-    price: 49.99,
-    compareAtPrice: 59.99,
+    price: 4999,
+    compareAtPrice: 5999,
     rating: 4.9,
     reviews: 342,
     stock: 28,
-    image: 'https://images.unsplash.com/photo-1533050487297-09ca450ccdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/3.jpg',
     images: [
-      'https://images.unsplash.com/photo-1533050487297-09ca450ccdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/3.jpg'
     ],
     tags: ['eyeshadow', 'palette', 'makeup', 'nude'],
     attrs: stringifyAttrs({
@@ -103,14 +104,14 @@ const mockProducts: Product[] = [
     title: 'Volume Mascara - Black',
     description: 'Lengthening and volumizing mascara for dramatic lashes',
     brand: 'LashLux',
-    price: 22.99,
-    compareAtPrice: 27.99,
+    price: 2299,
+    compareAtPrice: 2799,
     rating: 4.6,
     reviews: 421,
     stock: 65,
-    image: 'https://images.unsplash.com/photo-1586985288624-e97c52b8a473?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/4.jpg',
     images: [
-      'https://images.unsplash.com/photo-1586985288624-e97c52b8a473?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/4.jpg'
     ],
     tags: ['mascara', 'eyelashes', 'makeup', 'volume'],
     attrs: {
@@ -128,14 +129,14 @@ const mockProducts: Product[] = [
     title: 'Blush Duo - Rose Gold',
     description: 'Dual-toned blush for a natural, radiant glow',
     brand: 'Radiant Beauty',
-    price: 28.99,
-    compareAtPrice: 34.99,
+    price: 2899,
+    compareAtPrice: 3499,
     rating: 4.5,
     reviews: 187,
     stock: 38,
-    image: 'https://images.unsplash.com/photo-1571784728266-9c8e475dfe8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/5.jpg',
     images: [
-      'https://images.unsplash.com/photo-1571784728266-9c8e475dfe8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/5.jpg'
     ],
     tags: ['blush', 'cheeks', 'makeup', 'glow'],
     attrs: {
@@ -153,14 +154,14 @@ const mockProducts: Product[] = [
     title: 'Brow Pencil - Medium Brown',
     description: 'Precision eyebrow pencil with spoolie brush',
     brand: 'BrowGlam',
-    price: 19.99,
-    compareAtPrice: 24.99,
+    price: 1999,
+    compareAtPrice: 2499,
     rating: 4.8,
     reviews: 312,
     stock: 52,
-    image: 'https://images.unsplash.com/photo-1572635148018-5d3b1c5a0f5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/6.jpg',
     images: [
-      'https://images.unsplash.com/photo-1572635148018-5d3b1c5a0f5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/6.jpg'
     ],
     tags: ['brows', 'eyebrows', 'pencil', 'makeup'],
     attrs: {
@@ -178,14 +179,14 @@ const mockProducts: Product[] = [
     title: 'Liquid Eyeliner - Black',
     description: 'Precision liquid eyeliner with brush tip for sharp lines',
     brand: 'LinerX',
-    price: 21.99,
-    compareAtPrice: 26.99,
+    price: 2199,
+    compareAtPrice: 2699,
     rating: 4.7,
     reviews: 276,
     stock: 41,
-    image: 'https://images.unsplash.com/photo-1625772452859-1d0e5d9ce77a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/7.jpg',
     images: [
-      'https://images.unsplash.com/photo-1625772452859-1d0e5d9ce77a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/7.jpg'
     ],
     tags: ['eyeliner', 'liquid', 'makeup', 'precision'],
     attrs: {
@@ -203,14 +204,14 @@ const mockProducts: Product[] = [
     title: 'Makeup Setting Spray',
     description: 'Long-lasting setting spray for 16-hour makeup wear',
     brand: 'UrbanFix',
-    price: 29.99,
-    compareAtPrice: 34.99,
+    price: 2999,
+    compareAtPrice: 3499,
     rating: 4.9,
     reviews: 198,
     stock: 36,
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/8.jpg',
     images: [
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/8.jpg'
     ],
     tags: ['setting spray', 'makeup', 'long-lasting', 'finish'],
     attrs: {
@@ -228,14 +229,14 @@ const mockProducts: Product[] = [
     title: 'Concealer - Light Medium',
     description: 'Full coverage concealer with hydrating formula',
     brand: 'Flawless Base',
-    price: 26.99,
-    compareAtPrice: 31.99,
+    price: 2699,
+    compareAtPrice: 3199,
     rating: 4.7,
     reviews: 243,
     stock: 29,
-    image: 'https://images.unsplash.com/photo-1608375562906-1ff4dfb9aef5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/9.jpg',
     images: [
-      'https://images.unsplash.com/photo-1608375562906-1ff4dfb9aef5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/9.jpg'
     ],
     tags: ['concealer', 'coverage', 'makeup', 'hydrating'],
     attrs: {
@@ -253,14 +254,14 @@ const mockProducts: Product[] = [
     title: 'Lip Gloss - Clear Shimmer',
     description: 'Non-sticky lip gloss with subtle shimmer',
     brand: 'ShineOn',
-    price: 16.99,
-    compareAtPrice: 19.99,
+    price: 1699,
+    compareAtPrice: 1999,
     rating: 4.4,
     reviews: 167,
     stock: 58,
-    image: 'https://images.unsplash.com/photo-1586494824764-fbd27efd1d09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/10.jpg',
     images: [
-      'https://images.unsplash.com/photo-1586494824764-fbd27efd1d09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/10.jpg'
     ],
     tags: ['lip gloss', 'shimmer', 'makeup', 'clear'],
     attrs: {
@@ -278,14 +279,14 @@ const mockProducts: Product[] = [
     title: 'Highlighter Palette - Glow Kit',
     description: 'Four stunning highlighters for a radiant glow',
     brand: 'GlowGoddess',
-    price: 42.99,
-    compareAtPrice: 49.99,
+    price: 4299,
+    compareAtPrice: 4999,
     rating: 4.9,
     reviews: 198,
     stock: 24,
-    image: 'https://images.unsplash.com/photo-1533050487297-09ca450ccdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1533050487297-09ca450ccdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/11.jpg'
     ],
     tags: ['highlighter', 'glow', 'makeup', 'palette'],
     attrs: stringifyAttrs({
@@ -303,14 +304,14 @@ const mockProducts: Product[] = [
     title: 'Makeup Brush Set',
     description: 'Complete 12-piece vegan brush set for flawless application',
     brand: 'BrushMaster',
-    price: 59.99,
-    compareAtPrice: 79.99,
+    price: 5999,
+    compareAtPrice: 7999,
     rating: 4.8,
     reviews: 178,
     stock: 31,
-    image: 'https://images.unsplash.com/photo-1618574761848-ebbe5d0e5b7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Cosmetics/12.jpg',
     images: [
-      'https://images.unsplash.com/photo-1618574761848-ebbe5d0e5b7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Cosmetics/12.jpg'
     ],
     tags: ['brushes', 'makeup tools', 'vegan', 'set'],
     attrs: stringifyAttrs({
@@ -325,8 +326,9 @@ const mockProducts: Product[] = [
 ];
 
 export default function Cosmetics() {
-  const [sortOption, setSortOption] = useState("featured");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [sortOption, setSortOption] = useState("featured");
+  const navigate = useNavigate();
   
   // Use mock data instead of API call
   const products = mockProducts;
@@ -355,12 +357,23 @@ export default function Cosmetics() {
         />
         
         <div className="py-8">
-          <Breadcrumbs
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Cosmetics', href: '/cosmetics' }
-            ]}
-          />
+          <div className="flex items-center gap-4 mb-6">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back
+            </Button>
+            <Breadcrumbs
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Cosmetics', href: '/cosmetics' }
+              ]}
+            />
+          </div>
           
           <div className="mt-6">
             {/* Filters and sorting */}
@@ -392,11 +405,11 @@ export default function Cosmetics() {
               <div className="w-full">
                 {/* Product grid */}
                 {products.length > 0 ? (
-                  <div>
+                  <div data-products-section>
                     <ProductGrid
-                      products={products}
+                      products={mockProducts}
                       columnsDesktop={3}
-                      ratio="portrait"
+                      ratio="square"
                       emptyStateTitle="No cosmetics found"
                       emptyStateDescription="Try adjusting your search to find what you're looking for."
                       categoryAccent={COSMETICS_ACCENT}

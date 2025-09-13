@@ -6,6 +6,7 @@ export interface CategoryHeroProps {
   ctaLabel?: string;
   accent: string;
   imageSrc: string;
+  onCtaClick?: () => void;
 }
 
 export function CategoryHero({
@@ -14,6 +15,7 @@ export function CategoryHero({
   ctaLabel = "Shop Now",
   accent,
   imageSrc,
+  onCtaClick,
 }: CategoryHeroProps) {
   return (
     <div className="relative bg-white overflow-hidden">
@@ -36,6 +38,13 @@ export function CategoryHero({
                   <Button
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white md:py-4 md:text-lg md:px-10"
                     style={{ backgroundColor: accent }}
+                    onClick={onCtaClick || (() => {
+                      // Default behavior: scroll to products section
+                      const productsSection = document.querySelector('[data-products-section]');
+                      if (productsSection) {
+                        productsSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    })}
                   >
                     {ctaLabel}
                   </Button>

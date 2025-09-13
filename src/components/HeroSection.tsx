@@ -1,6 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleShopNow = () => {
+    const categoriesSection = document.querySelector('[data-categories-section]');
+    if (categoriesSection) {
+      categoriesSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback: navigate to a category page
+      navigate('/accessories');
+    }
+  };
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
@@ -26,6 +38,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-hero-cta hover:bg-cosmetics text-hero-cta-foreground text-lg px-8 py-4 uppercase font-bold tracking-wider transition-all duration-300 transform hover:scale-105"
+            onClick={handleShopNow}
           >
             Shop Now
           </Button>

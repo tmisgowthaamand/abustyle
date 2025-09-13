@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { CategoryHero } from "@/components/CategoryHero";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 import { Product } from '@/types/product';
 
@@ -16,16 +18,16 @@ const mockProducts: Product[] = [
     title: 'Gold Hoop Earrings',
     description: 'Elegant 14K gold plated hoop earrings with secure latch closure',
     brand: 'Luxury Accessories',
-    price: 45.99,
-    compareAtPrice: 59.99,
+    price: 4599,
+    compareAtPrice: 5999,
     rating: 4.5,
     reviews: 128,
     stock: 50,
-    image: '/images/products/accessories/1.png',
+    image: '/images/Accessories/1.jpg',
     images: [
-      '/images/products/accessories/1.png',
-      '/images/products/accessories/2.png',
-      '/images/products/accessories/3.png'
+      '/images/Accessories/1.jpg',
+      '/images/Accessories/2.jpg',
+      '/images/Accessories/3.jpg'
     ],
     tags: ['jewelry', 'gold', 'hoops', 'earrings'],
     attrs: {
@@ -43,14 +45,14 @@ const mockProducts: Product[] = [
     title: 'Minimalist Gold Necklace',
     description: 'Simple and elegant 14K gold plated necklace with adjustable chain',
     brand: 'Minimalist Accessories',
-    price: 89.99,
-    compareAtPrice: 129.99,
+    price: 8999,
+    compareAtPrice: 12999,
     rating: 4.8,
     reviews: 142,
     stock: 30,
-    image: 'https://images.unsplash.com/photo-1603974375894-2b7c0c6f8a1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/2.jpg',
     images: [
-      'https://images.unsplash.com/photo-1603974375894-2b7c0c6f8a1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/2.jpg'
     ],
     tags: ['jewelry', 'necklace', 'minimalist', 'gold'],
     attrs: {
@@ -68,14 +70,14 @@ const mockProducts: Product[] = [
     title: 'Leather Crossbody Bag',
     description: 'Genuine leather crossbody bag with adjustable strap',
     brand: 'Urban Chic',
-    price: 129.99,
-    compareAtPrice: 159.99,
+    price: 12999,
+    compareAtPrice: 15999,
     rating: 4.7,
     reviews: 89,
     stock: 25,
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/3.jpg',
     images: [
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/3.jpg'
     ],
     tags: ['bag', 'crossbody', 'leather', 'fashion'],
     attrs: {
@@ -93,14 +95,14 @@ const mockProducts: Product[] = [
     title: 'Silver Bangle Set',
     description: 'Set of three sterling silver bangles with different widths',
     brand: 'Silver Essence',
-    price: 75.99,
-    compareAtPrice: 99.99,
+    price: 7599,
+    compareAtPrice: 9999,
     rating: 4.6,
     reviews: 112,
     stock: 40,
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/4.jpg',
     images: [
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/4.jpg'
     ],
     tags: ['jewelry', 'silver', 'bangles', 'set'],
     attrs: {
@@ -118,14 +120,14 @@ const mockProducts: Product[] = [
     title: 'Designer Sunglasses',
     description: 'UV protection sunglasses with polarized lenses',
     brand: 'SunStyle',
-    price: 129.99,
-    compareAtPrice: 179.99,
+    price: 12999,
+    compareAtPrice: 17999,
     rating: 4.9,
     reviews: 256,
     stock: 35,
-    image: 'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/5.jpg',
     images: [
-      'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/5.jpg'
     ],
     tags: ['sunglasses', 'eyewear', 'fashion', 'uv-protection'],
     attrs: {
@@ -143,14 +145,14 @@ const mockProducts: Product[] = [
     title: 'Pearl Drop Earrings',
     description: 'Elegant freshwater pearl drop earrings with 14K gold accents',
     brand: 'Pearl Essence',
-    price: 95.99,
-    compareAtPrice: 129.99,
+    price: 9599,
+    compareAtPrice: 12999,
     rating: 4.7,
     reviews: 87,
     stock: 28,
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/6.jpg',
     images: [
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/6.jpg'
     ],
     tags: ['jewelry', 'pearl', 'earrings', 'gold'],
     attrs: {
@@ -168,14 +170,14 @@ const mockProducts: Product[] = [
     title: 'Leather Wallet with RFID',
     description: 'Genuine leather wallet with RFID blocking technology',
     brand: 'LeatherCraft',
-    price: 49.99,
-    compareAtPrice: 69.99,
+    price: 4999,
+    compareAtPrice: 6999,
     rating: 4.4,
     reviews: 203,
     stock: 60,
-    image: 'https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/7.jpg',
     images: [
-      'https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/7.jpg'
     ],
     tags: ['wallet', 'leather', 'rfid', 'men', 'women'],
     attrs: {
@@ -193,14 +195,14 @@ const mockProducts: Product[] = [
     title: 'Silk Scarf',
     description: 'Luxury 100% silk scarf with hand-rolled edges',
     brand: 'Silk & Co',
-    price: 89.99,
-    compareAtPrice: 119.99,
+    price: 8999,
+    compareAtPrice: 11999,
     rating: 4.8,
     reviews: 76,
     stock: 32,
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/8.jpg',
     images: [
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/8.jpg'
     ],
     tags: ['scarf', 'silk', 'fashion', 'women'],
     attrs: {
@@ -218,14 +220,14 @@ const mockProducts: Product[] = [
     title: 'Stainless Steel Watch',
     description: 'Minimalist stainless steel watch with leather strap',
     brand: 'TimeCraft',
-    price: 159.99,
-    compareAtPrice: 199.99,
+    price: 15999,
+    compareAtPrice: 19999,
     rating: 4.9,
     reviews: 184,
     stock: 22,
-    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/9.jpg',
     images: [
-      'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/9.jpg'
     ],
     tags: ['watch', 'timepiece', 'minimalist', 'unisex'],
     attrs: {
@@ -243,14 +245,14 @@ const mockProducts: Product[] = [
     title: 'Cashmere Beanie',
     description: 'Luxury cashmere beanie for cold weather',
     brand: 'WinterLux',
-    price: 79.99,
-    compareAtPrice: 99.99,
+    price: 7999,
+    compareAtPrice: 9999,
     rating: 4.6,
     reviews: 132,
     stock: 45,
-    image: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/10.jpg',
     images: [
-      'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/10.jpg'
     ],
     tags: ['hat', 'beanie', 'winter', 'cashmere'],
     attrs: {
@@ -268,14 +270,14 @@ const mockProducts: Product[] = [
     title: 'Leather Belt',
     description: 'Genuine leather belt with stainless steel buckle',
     brand: 'LeatherCraft',
-    price: 59.99,
-    compareAtPrice: 79.99,
+    price: 5999,
+    compareAtPrice: 7999,
     rating: 4.5,
     reviews: 167,
     stock: 38,
-    image: 'https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/11.jpg',
     images: [
-      'https://images.unsplash.com/photo-1591561954555-607968c989ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/11.jpg'
     ],
     tags: ['belt', 'leather', 'men', 'fashion'],
     attrs: {
@@ -293,14 +295,14 @@ const mockProducts: Product[] = [
     title: 'Aviator Sunglasses',
     description: 'Classic aviator sunglasses with mirrored lenses',
     brand: 'Ray-Ban',
-    price: 149.99,
-    compareAtPrice: 199.99,
+    price: 14999,
+    compareAtPrice: 19999,
     rating: 4.9,
     reviews: 298,
     stock: 28,
-    image: 'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Accessories/12.jpg',
     images: [
-      'https://images.unsplash.com/photo-1511499767150-a48a237ac008?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+      '/images/Accessories/12.jpg'
     ],
     tags: ['sunglasses', 'aviator', 'eyewear', 'classic'],
     attrs: {
@@ -317,8 +319,9 @@ const mockProducts: Product[] = [
 const ACCESSORIES_ACCENT = "#D4AF37";
 
 export default function Accessories() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sortOption, setSortOption] = useState("featured");
+  const navigate = useNavigate();
 
   // Sort options configuration
 
@@ -353,13 +356,23 @@ export default function Accessories() {
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Accessories" },
-          ]}
-          className="mb-6"
-        />
+        <div className="flex items-center gap-4 mb-6">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back
+          </Button>
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Accessories" },
+            ]}
+          />
+        </div>
 
         <div className="w-full">
           {/* Sort bar */}
@@ -382,14 +395,16 @@ export default function Accessories() {
           </div>
 
             {/* Product grid */}
-            <ProductGrid
-              products={mockProducts}
-              columnsDesktop={3}
-              ratio="portrait"
-              emptyStateTitle="No accessories found"
-              emptyStateDescription="Try adjusting your search to find what you're looking for."
-              categoryAccent={ACCESSORIES_ACCENT}
-            />
+            <div data-products-section>
+              <ProductGrid
+                products={mockProducts}
+                columnsDesktop={3}
+                ratio="square"
+                emptyStateTitle="No accessories found"
+                emptyStateDescription="Try adjusting your search to find what you're looking for."
+                categoryAccent={ACCESSORIES_ACCENT}
+              />
+            </div>
           </div>
       </main>
     </Layout>

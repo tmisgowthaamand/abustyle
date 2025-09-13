@@ -1,8 +1,8 @@
-import { X } from 'lucide-react';
+import { X, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter, SheetDescription } from '@/components/ui/sheet';
-import { useCart } from '@/hooks/use-cart';
+import { useCartContext } from '@/providers/CartProvider';
 import { formatPrice } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { Input } from './ui/input';
@@ -42,8 +42,9 @@ type CartDrawerProps = {
 };
 
 export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
-  const { items, subtotal, itemCount, updateQty, remove, clear } = useCart();
+  const { items, subtotal, itemCount, updateQty, remove, clear } = useCartContext();
   const [isUpdating, setIsUpdating] = useState<Record<string, boolean>>({});
+  const [showCancelDialog, setShowCancelDialog] = useState(false);
 
   const handleQuantityChange = (itemId: string, newQty: number) => {
     setIsUpdating(prev => ({ ...prev, [itemId]: true }));
@@ -55,6 +56,16 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
     }, 300);
   };
 
+  const handleCancelOrder = () => {
+    setShowCancelDialog(true);
+  };
+
+  const confirmCancelOrder = () => {
+    clear();
+    setShowCancelDialog(false);
+    onOpenChange(false);
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={onOpenChange}>
       <SheetDescription className="sr-only">
@@ -62,18 +73,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
       </SheetDescription>
       <SheetContent className="flex flex-col w-full sm:max-w-md">
         <SheetHeader className="border-b pb-4">
-          <div className="flex items-center justify-between">
-            <SheetTitle className="text-xl font-semibold">Your Cart</SheetTitle>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => onOpenChange(false)}
-              className="h-8 w-8"
-            >
-              <X className="h-4 w-4" />
-              <span className="sr-only">Close cart</span>
-            </Button>
-          </div>
+          <SheetTitle className="text-xl font-semibold">Your Cart</SheetTitle>
           <p className="text-sm text-muted-foreground">
             {itemCount} {itemCount === 1 ? 'item' : 'items'}
           </p>
@@ -82,7 +82,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
         {items.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center p-8">
             <div className="rounded-full bg-gray-100 p-4 mb-4">
-              <ShoppingCartIcon className="h-8 w-8 text-muted-foreground" />
+              <X className="h-8 w-8 text-muted-foreground" />
             </div>
             <h3 className="text-lg font-medium mb-2">Your cart is empty</h3>
             <p className="text-sm text-muted-foreground mb-6">
@@ -123,7 +123,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
                         <div className="mt-1 text-xs text-muted-foreground space-y-0.5">
                           {Object.entries(item.attrs).map(([key, value]) => (
                             <div key={key}>
-                              <span className="font-medium">{key}:</span> {value}
+                              <span className="font-medium">{key}:</span> {String(value)}
                             </div>
                           ))}
                         </div>
@@ -181,23 +181,32 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
                 <p className="text-sm text-muted-foreground">
                   Shipping and taxes calculated at checkout.
                 </p>
-                <div className="space-y-2">
-                  <Button asChild className="w-full" size="lg">
-                    <Link to="/checkout" onClick={() => onOpenChange(false)}>
-                      Proceed to Checkout
+                <div className="space-y-3">
+                  <Button asChild className="w-full">
+                    <Link to="/checkout">
+                      Proceed to Checkout • {formatPrice(subtotal)}
                     </Link>
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full"
-                    onClick={() => {
-                      if (confirm('Are you sure you want to clear your cart?')) {
-                        clear();
-                      }
-                    }}
-                  >
-                    Clear Cart
-                  </Button>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => {
+                        if (confirm('Are you sure you want to clear your cart?')) {
+                          clear();
+                        }
+                      }}
+                    >
+                      Clear Cart
+                    </Button>
+                    <Button
+                      variant="destructive"
+                      className="w-full"
+                      onClick={handleCancelOrder}
+                    >
+                      Cancel Order
+                    </Button>
+                  </div>
                 </div>
                 <p className="text-center text-xs text-muted-foreground">
                   or{' '}
@@ -214,6 +223,37 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
           </>
         )}
       </SheetContent>
+
+      {/* Cancel Order Confirmation Dialog */}
+      {showCancelDialog && (
+        <div className="fixed inset-0 z-[100] bg-black/50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-red-100 rounded-full">
+                <AlertTriangle className="h-5 w-5 text-red-600" />
+              </div>
+              <h3 className="text-lg font-semibold">Cancel Order</h3>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Are you sure you want to cancel your order? This will remove all items from your cart and cannot be undone.
+            </p>
+            <div className="flex gap-3 justify-end">
+              <Button
+                variant="outline"
+                onClick={() => setShowCancelDialog(false)}
+              >
+                Keep Order
+              </Button>
+              <Button
+                variant="destructive"
+                onClick={confirmCancelOrder}
+              >
+                Yes, Cancel Order
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </Sheet>
   );
 }

@@ -1,22 +1,14 @@
-# Welcome to your Lovable project
+# ABU Style Stories
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/7214de4d-4f65-4dc3-a67a-2d7f4863914a
+E-commerce website for ABU Accessories featuring cosmetics, toys, accessories, and bags.
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/7214de4d-4f65-4dc3-a67a-2d7f4863914a) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone this repo and push changes to update the application.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +54,12 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/7214de4d-4f65-4dc3-a67a-2d7f4863914a) and click on Share -> Publish.
+Build and deploy using your preferred hosting service (Vercel, Netlify, etc.).
 
-## Can I connect a custom domain to my Lovable project?
+## Features
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Modern e-commerce interface
+- Product categories (Cosmetics, Toys, Accessories, Bags)
+- Shopping cart functionality
+- Search and navigation
+- Responsive design

@@ -76,9 +76,9 @@ export function ProductCard({
         image,
         quantity: 1
       });
-      toast.success("Added to cart");
       onAddToCart?.();
     } catch (error) {
+      console.error("Failed to add item to cart:", error);
       toast.error("Failed to add item to cart");
     } finally {
       setIsLoading(false);
@@ -106,13 +106,13 @@ export function ProductCard({
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
     >
-      {/* Image Container with 1:1 Aspect Ratio */}
-      <div className="relative w-full pt-[100%] bg-gray-50">
+      {/* Image Container with Dynamic Aspect Ratio */}
+      <div className={`relative w-full ${ratio === "square" ? "pt-[100%]" : "pt-[125%]"} bg-gray-50`}>
         {image ? (
           <img
             src={image}
             alt={name}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-contain object-center bg-white"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.onerror = null;
@@ -153,7 +153,7 @@ export function ProductCard({
         
         <div className="flex flex-col flex-grow">
           <div className="mb-2">
-            <Link to={`/${category}/product/${id}`} className="hover:no-underline">
+            <Link to={`/product/${category}/${id}`} className="hover:no-underline">
               <h3 className="text-sm font-medium text-gray-900 line-clamp-2 hover:text-primary">
                 {name}
               </h3>

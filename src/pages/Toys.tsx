@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { CategoryHero } from "@/components/CategoryHero";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 import { Product } from '@/types/product';
 
@@ -16,16 +18,16 @@ const mockProducts: Product[] = [
     title: "Building Blocks Set - 120 Pieces",
     description: "Colorful building blocks for creative play and learning",
     brand: "BlockMasters",
-    price: 29.99,
-    compareAtPrice: 39.99,
+    price: 2999,
+    compareAtPrice: 3999,
     rating: 4.7,
     reviews: 215,
     stock: 75,
-    image: "/images/products/toys/1.png",
+    image: "/images/Toys/1.jpg",
     images: [
-      "/images/products/toys/1.png",
-      "/images/products/toys/2.png",
-      "/images/products/toys/3.png"
+      "/images/Toys/1.jpg",
+      "/images/Toys/2.jpg",
+      "/images/Toys/3.jpg"
     ],
     tags: ["building", "educational", "creative"],
     attrs: {
@@ -42,15 +44,14 @@ const mockProducts: Product[] = [
     title: "Plush Teddy Bear",
     description: "Soft and cuddly teddy bear for children of all ages",
     brand: "CuddleBuddies",
-    price: 24.99,
-    compareAtPrice: 34.99,
+    price: 2499,
+    compareAtPrice: 3499,
     rating: 4.9,
     reviews: 210,
     stock: 60,
-    image: "https://images.unsplash.com/photo-1589870465309-875f8eeb10c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/2.jpg",
     images: [
-      "https://images.unsplash.com/photo-1589870465309-875f8eeb10c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/2.jpg"
     ],
     tags: ["plush", "teddy", "stuffed"],
     attrs: {
@@ -67,14 +68,14 @@ const mockProducts: Product[] = [
     title: "Remote Control Car",
     description: "Fast and durable RC car with 2.4GHz remote control",
     brand: "SpeedRacers",
-    price: 49.99,
-    compareAtPrice: 64.99,
+    price: 4999,
+    compareAtPrice: 6499,
     rating: 4.5,
     reviews: 189,
     stock: 45,
-    image: "https://images.unsplash.com/photo-1556327908-6a7f3a2f5f8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/3.jpg",
     images: [
-      "https://images.unsplash.com/photo-1556327908-6a7f3a2f5f8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/3.jpg"
     ],
     tags: ["rc", "remote control", "vehicle"],
     attrs: {
@@ -91,14 +92,14 @@ const mockProducts: Product[] = [
     title: "Science Experiment Kit",
     description: "Educational science kit with 50+ experiments",
     brand: "Young Scientists",
-    price: 34.99,
-    compareAtPrice: 44.99,
+    price: 3499,
+    compareAtPrice: 4499,
     rating: 4.8,
     reviews: 156,
     stock: 38,
-    image: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/4.jpg",
     images: [
-      "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/4.jpg"
     ],
     tags: ["educational", "science", "learning"],
     attrs: {
@@ -115,14 +116,14 @@ const mockProducts: Product[] = [
     title: "Dollhouse with Furniture",
     description: "Beautiful wooden dollhouse with complete furniture set",
     brand: "DreamHomes",
-    price: 89.99,
-    compareAtPrice: 119.99,
+    price: 8999,
+    compareAtPrice: 11999,
     rating: 4.9,
     reviews: 245,
     stock: 28,
-    image: "https://images.unsplash.com/photo-1594788003826-0475a6f5a5e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/5.jpg",
     images: [
-      "https://images.unsplash.com/photo-1594788003826-0475a6f5a5e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/5.jpg"
     ],
     tags: ["dollhouse", "pretend play", "wooden"],
     attrs: {
@@ -139,14 +140,14 @@ const mockProducts: Product[] = [
     title: "Jigsaw Puzzle - 1000 Pieces",
     description: "Challenging jigsaw puzzle with beautiful landscape image",
     brand: "PuzzleMasters",
-    price: 19.99,
-    compareAtPrice: 29.99,
+    price: 1999,
+    compareAtPrice: 2999,
     rating: 4.6,
     reviews: 178,
     stock: 65,
-    image: "https://images.unsplash.com/photo-1590000216662-9e8f8c6d2e9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/6.jpg",
     images: [
-      "https://images.unsplash.com/photo-1590000216662-9e8f8c6d2e9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/6.jpg"
     ],
     tags: ["puzzle", "family", "challenging"],
     attrs: {
@@ -163,14 +164,14 @@ const mockProducts: Product[] = [
     title: "Art Set - 150 Pieces",
     description: "Complete art set with various coloring and drawing tools",
     brand: "ArtisticKids",
-    price: 27.99,
-    compareAtPrice: 39.99,
+    price: 2799,
+    compareAtPrice: 3999,
     rating: 4.7,
     reviews: 198,
     stock: 42,
-    image: "https://images.unsplash.com/photo-1578923896409-9ac2a3d06960?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/7.jpg",
     images: [
-      "https://images.unsplash.com/photo-1578923896409-9ac2a3d06960?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/7.jpg"
     ],
     tags: ["art", "drawing", "creative"],
     attrs: {
@@ -187,14 +188,14 @@ const mockProducts: Product[] = [
     title: "Balance Bike for Toddlers",
     description: "Wooden balance bike for learning to ride",
     brand: "FirstRide",
-    price: 79.99,
-    compareAtPrice: 99.99,
+    price: 7999,
+    compareAtPrice: 9999,
     rating: 4.8,
     reviews: 167,
     stock: 32,
-    image: "https://images.unsplash.com/photo-1588987177403-9f6d2d5a5e5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/8.jpg",
     images: [
-      "https://images.unsplash.com/photo-1588987177403-9f6d2d5a5e5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/8.jpg"
     ],
     tags: ["outdoor", "bike", "toddler"],
     attrs: {
@@ -211,14 +212,14 @@ const mockProducts: Product[] = [
     title: "Magnetic Tiles - 100 Pieces",
     description: "Colorful magnetic building tiles for creative construction",
     brand: "MagBlocks",
-    price: 59.99,
-    compareAtPrice: 79.99,
+    price: 5999,
+    compareAtPrice: 7999,
     rating: 4.9,
     reviews: 312,
     stock: 48,
-    image: "https://images.unsplash.com/photo-1600265372359-1a8f9a2b3d0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/9.jpg",
     images: [
-      "https://images.unsplash.com/photo-1600265372359-1a8f9a2b3d0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/9.jpg"
     ],
     tags: ["magnetic", "building", "educational"],
     attrs: {
@@ -235,14 +236,14 @@ const mockProducts: Product[] = [
     title: "Doctor Play Set",
     description: "Complete doctor role play set with medical tools",
     brand: "Pretend & Play",
-    price: 32.99,
-    compareAtPrice: 42.99,
+    price: 3299,
+    compareAtPrice: 4299,
     rating: 4.7,
     reviews: 145,
     stock: 55,
-    image: "https://images.unsplash.com/photo-1590000000000-5e8b9bea1b5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/10.jpg",
     images: [
-      "https://images.unsplash.com/photo-1590000000000-5e8b9bea1b5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/10.jpg"
     ],
     tags: ["pretend play", "doctor", "role play"],
     attrs: {
@@ -259,14 +260,14 @@ const mockProducts: Product[] = [
     title: "Robot Dog",
     description: "Interactive robotic dog with realistic movements and sounds",
     brand: "TechPets",
-    price: 129.99,
-    compareAtPrice: 159.99,
+    price: 12999,
+    compareAtPrice: 15999,
     rating: 4.6,
     reviews: 231,
     stock: 25,
-    image: "https://images.unsplash.com/photo-1590000000000-1b5f5f8d6a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/11.jpg",
     images: [
-      "https://images.unsplash.com/photo-1590000000000-1b5f5f8d6a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/11.jpg"
     ],
     tags: ["robotic", "interactive", "electronic"],
     attrs: {
@@ -283,14 +284,14 @@ const mockProducts: Product[] = [
     title: "Watercolor Paint Set",
     description: "Complete watercolor painting set with 36 colors",
     brand: "ArtisticKids",
-    price: 22.99,
-    compareAtPrice: 29.99,
+    price: 2299,
+    compareAtPrice: 2999,
     rating: 4.8,
     reviews: 187,
     stock: 62,
-    image: "https://images.unsplash.com/photo-1590000000000-1b5f5f8d6a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/Toys/12.jpg",
     images: [
-      "https://images.unsplash.com/photo-1590000000000-1b5f5f8d6a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      "/images/Toys/12.jpg"
     ],
     tags: ["art", "painting", "creative"],
     attrs: {
@@ -306,8 +307,9 @@ const mockProducts: Product[] = [
 const TOYS_ACCENT = "#3B82F6";
 
 export default function Toys() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sortOption, setSortOption] = useState("featured");
+  const navigate = useNavigate();
 
   // Sort options configuration
 
@@ -342,13 +344,23 @@ export default function Toys() {
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Toys" },
-          ]}
-          className="mb-6"
-        />
+        <div className="flex items-center gap-4 mb-6">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back
+          </Button>
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Toys" },
+            ]}
+          />
+        </div>
 
         <div className="w-full">
           {/* Sort bar */}
@@ -371,14 +383,16 @@ export default function Toys() {
           </div>
 
             {/* Product grid */}
-            <ProductGrid
-              products={mockProducts}
-              columnsDesktop={3}
-              ratio="square"
-              emptyStateTitle="No toys found"
-              emptyStateDescription="Try adjusting your search to find what you're looking for."
-              categoryAccent={TOYS_ACCENT}
-            />
+            <div data-products-section>
+              <ProductGrid
+                products={mockProducts}
+                columnsDesktop={3}
+                ratio="square"
+                emptyStateTitle="No toys found"
+                emptyStateDescription="Try adjusting your search to find what you're looking for."
+                categoryAccent={TOYS_ACCENT}
+              />
+            </div>
           </div>
       </main>
     </Layout>

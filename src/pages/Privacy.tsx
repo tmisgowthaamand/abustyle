@@ -1,9 +1,24 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 const Privacy = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="flex items-center gap-4 mb-6">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back
+        </Button>
+      </div>
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-center">Privacy Policy</h1>
         <p className="text-xl text-center mb-12 text-gray-600 dark:text-gray-300">
@@ -108,14 +123,6 @@ const Privacy = () => {
             </p>
           </div>
 
-          <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-            <Link 
-              to="/" 
-              className="inline-flex items-center text-blue-600 hover:underline"
-            >
-              ← Back to Home
-            </Link>
-          </div>
         </div>
       </div>
     </div>
