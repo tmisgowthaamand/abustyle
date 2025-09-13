@@ -41,7 +41,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Logo & Tagline */}
           <div className="md:col-span-2 lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">ABU Accessories</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/images/Logo.png" 
+                alt="ABU Accessories Logo" 
+                className="h-12 w-12 object-contain rounded-lg shadow-sm brightness-110 contrast-110 saturate-110"
+              />
+              <h3 className="text-2xl font-bold">ABU Accessories</h3>
+            </div>
             <p className="text-footer-foreground/80 leading-relaxed">
               Style for Every Story — from stalls to your doorstep.
             </p>

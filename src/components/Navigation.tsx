@@ -114,9 +114,16 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 group">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-gray-700 group-hover:to-gray-500 transition-all duration-300">
-              ABU Accessories
-            </h1>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/images/Logo.png" 
+                alt="ABU Accessories Logo" 
+                className="h-10 w-10 object-contain rounded-lg shadow-sm group-hover:shadow-md transition-all duration-300 brightness-110 contrast-110 saturate-110 group-hover:brightness-125"
+              />
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-gray-700 group-hover:to-gray-500 transition-all duration-300">
+                ABU Accessories
+              </h1>
+            </div>
           </Link>
 
           {/* Category Navigation */}
