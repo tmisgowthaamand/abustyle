@@ -107,12 +107,12 @@ export function ProductCard({
       onClick={handleCardClick}
     >
       {/* Image Container with Dynamic Aspect Ratio */}
-      <div className="relative w-full aspect-square bg-gray-50">
+      <div className="relative w-full aspect-square bg-gray-50 overflow-hidden">
         {image ? (
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.src = '/images/placeholder-product.svg';
