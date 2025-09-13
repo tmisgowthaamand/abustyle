@@ -107,7 +107,7 @@ export function ProductCard({
       onClick={handleCardClick}
     >
       {/* Image Container with Dynamic Aspect Ratio */}
-      <div className={`relative w-full ${ratio === "square" ? "pt-[100%]" : "pt-[125%]"} bg-gray-50`}>
+      <div className="relative w-full aspect-square bg-gray-50">
         {image ? (
           <img
             src={image}
