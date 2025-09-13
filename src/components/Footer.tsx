@@ -29,7 +29,7 @@ const Footer = () => {
 
   const mallLocations = [
     {
-      name: "ABU Style Stories",
+      name: "ABU Accessories",
       address: "No.509, 1st BLOCK, Ph-2, Muthamizh Nagar, Chennai, Tamil Nadu, 600118",
       hours: "10 AM - 9 PM",
     },

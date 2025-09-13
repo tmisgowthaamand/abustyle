@@ -7,7 +7,7 @@ export const cosmeticsProducts: Product[] = [
     title: 'Matte Lipstick - Ruby Red',
     description: 'Long-lasting matte lipstick with intense color payoff',
     brand: 'Glamour Cosmetics',
-    price: 2499,
+    price: 90,
     compareAtPrice: 2999,
     rating: 4.8,
     reviews: 124,
@@ -30,10 +30,10 @@ export const cosmeticsProducts: Product[] = [
   {
     id: 'c2',
     category: 'cosmetics',
-    title: 'Hydrating Foundation - Beige',
+    title: 'Hydrating Foundation - Natural Beige',
     description: 'Lightweight foundation with hyaluronic acid for 24h hydration',
     brand: 'Luminous Beauty',
-    price: 3999,
+    price: 350,
     compareAtPrice: 3999,
     rating: 4.7,
     reviews: 89,
@@ -57,25 +57,25 @@ export const cosmeticsProducts: Product[] = [
   {
     id: 'c3',
     category: 'cosmetics',
-    title: 'Volume Mascara - Black',
-    description: 'Lengthening and volumizing mascara for dramatic lashes',
-    brand: 'Lash Queen',
-    price: 1999,
-    compareAtPrice: 2499,
-    rating: 4.6,
-    reviews: 215,
-    stock: 67,
+    title: 'Eyeshadow Palette - Nude Tones',
+    description: '12 highly pigmented nude shades for versatile day to night looks',
+    brand: 'Elegance',
+    price: 799,
+    compareAtPrice: 4999,
+    rating: 4.8,
+    reviews: 156,
+    stock: 28,
     tags: ['bestseller'],
-    image: '/images/Cosmetics/5.jpg',
+    image: '/images/Cosmetics/3.jpg',
     images: [
-      '/images/Cosmetics/10.jpg',
-      '/images/Cosmetics/11.jpg',
-      '/images/Cosmetics/8.jpg'
+      '/images/Cosmetics/3.jpg',
+      '/images/Cosmetics/4.jpg',
+      '/images/Cosmetics/5.jpg'
     ],
     attrs: {
-      color: 'Black',
-      volume: '10ml',
-      waterResistant: 'Yes'
+      shades: '12',
+      finish: 'Matte & Shimmer',
+      weight: '15g'
     },
     createdAt: '2023-01-25T09:15:00Z',
     updatedAt: '2023-01-25T09:15:00Z'
@@ -83,14 +83,14 @@ export const cosmeticsProducts: Product[] = [
   {
     id: 'c4',
     category: 'cosmetics',
-    title: 'Eyeshadow Palette - Nude',
-    description: '12 highly pigmented nude shades for day to night looks',
-    brand: 'Elegance',
-    price: 4299,
-    compareAtPrice: 4999,
-    rating: 4.9,
-    reviews: 178,
-    stock: 28,
+    title: 'Volume Mascara - Black',
+    description: 'Lengthening and volumizing mascara for dramatic lashes',
+    brand: 'LashLux',
+    price: 4100,
+    compareAtPrice: 2499,
+    rating: 4.6,
+    reviews: 421,
+    stock: 65,
     tags: ['new'],
     image: '/images/Cosmetics/4.jpg',
     images: [
@@ -99,9 +99,9 @@ export const cosmeticsProducts: Product[] = [
       '/images/Cosmetics/6.jpg'
     ],
     attrs: {
-      shades: '12',
-      finish: 'Matte & Shimmer',
-      weight: '15g'
+      color: 'Black',
+      volume: '10ml',
+      waterResistant: 'No'
     },
     createdAt: '2023-03-05T11:45:00Z',
     updatedAt: '2023-03-05T11:45:00Z'
@@ -297,10 +297,10 @@ export const cosmeticsProducts: Product[] = [
   {
     id: 'c12',
     category: 'cosmetics',
-    title: 'Lip Gloss Set - Nude Collection',
+    title: 'Premium Rose Lipstick Set',
     description: 'Set of 3 hydrating nude lip glosses',
     brand: 'Glamour Cosmetics',
-    price: 3299,
+    price: 509,
     compareAtPrice: 3999,
     rating: 4.8,
     reviews: 134,

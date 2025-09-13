@@ -12,7 +12,7 @@ const getProductData = (category: string, id: string) => {
       "1": {
         id: "1",
         title: "Premium Rose Lipstick Set",
-        price: 2499,
+        price: 509,
         compareAtPrice: 3499,
         category: "cosmetics",
         image: "/images/Home/1.jpg",
@@ -27,7 +27,7 @@ const getProductData = (category: string, id: string) => {
       "c1": {
         id: "c1",
         title: "Matte Lipstick - Ruby Red",
-        price: 2499,
+        price: 90,
         compareAtPrice: 2999,
         category: "cosmetics",
         image: "/images/Cosmetics/1.jpg",
@@ -42,7 +42,7 @@ const getProductData = (category: string, id: string) => {
       "c2": {
         id: "c2",
         title: "Hydrating Foundation - Natural Beige",
-        price: 3499,
+        price: 350,
         compareAtPrice: 3999,
         category: "cosmetics",
         image: "/images/Cosmetics/2.jpg",
@@ -54,26 +54,11 @@ const getProductData = (category: string, id: string) => {
         inStock: true,
         stock: 32
       },
-      "c3": {
-        id: "c3",
-        title: "Eyeshadow Palette - Nude Tones",
-        price: 4999,
-        compareAtPrice: 5999,
-        category: "cosmetics",
-        image: "/images/Cosmetics/3.jpg",
-        images: ["/images/Cosmetics/3.jpg"],
-        rating: 4.9,
-        reviews: 342,
-        description: "Versatile 12-shade palette with matte and shimmer finishes",
-        features: ["Matte & Shimmer finish", "12 shades", "15g weight", "Vegan formula"],
-        inStock: true,
-        stock: 28
-      },
       "c4": {
         id: "c4",
         title: "Volume Mascara - Black",
-        price: 2299,
-        compareAtPrice: 2799,
+        price: 4100,
+        compareAtPrice: 2499,
         category: "cosmetics",
         image: "/images/Cosmetics/4.jpg",
         images: ["/images/Cosmetics/4.jpg"],
@@ -84,10 +69,25 @@ const getProductData = (category: string, id: string) => {
         inStock: true,
         stock: 65
       },
+      "c3": {
+        id: "c3",
+        title: "Eyeshadow Palette - Nude Tones",
+        price: 799,
+        compareAtPrice: 4999,
+        category: "cosmetics",
+        image: "/images/Cosmetics/3.jpg",
+        images: ["/images/Cosmetics/3.jpg"],
+        rating: 4.8,
+        reviews: 156,
+        description: "12 highly pigmented nude shades for versatile day to night looks with matte and shimmer finishes",
+        features: ["12 nude eyeshadow shades", "Matte & shimmer finishes", "Highly pigmented formula", "Long-lasting wear"],
+        inStock: true,
+        stock: 28
+      },
       "c5": {
         id: "c5",
         title: "Blush Duo - Rose Gold",
-        price: 2899,
+        price: 1540,
         compareAtPrice: 3499,
         category: "cosmetics",
         image: "/images/Cosmetics/5.jpg",
@@ -102,7 +102,7 @@ const getProductData = (category: string, id: string) => {
       "c6": {
         id: "c6",
         title: "Brow Pencil - Medium Brown",
-        price: 1999,
+        price: 65,
         compareAtPrice: 2499,
         category: "cosmetics",
         image: "/images/Cosmetics/6.jpg",
@@ -117,7 +117,7 @@ const getProductData = (category: string, id: string) => {
       "c7": {
         id: "c7",
         title: "Liquid Eyeliner - Black",
-        price: 2199,
+        price: 59,
         compareAtPrice: 2699,
         category: "cosmetics",
         image: "/images/Cosmetics/7.jpg",
@@ -132,7 +132,7 @@ const getProductData = (category: string, id: string) => {
       "c8": {
         id: "c8",
         title: "Makeup Setting Spray",
-        price: 2999,
+        price: 219,
         compareAtPrice: 3499,
         category: "cosmetics",
         image: "/images/Cosmetics/8.jpg",
@@ -147,7 +147,7 @@ const getProductData = (category: string, id: string) => {
       "c9": {
         id: "c9",
         title: "Concealer - Light Medium",
-        price: 2699,
+        price: 499,
         compareAtPrice: 3199,
         category: "cosmetics",
         image: "/images/Cosmetics/9.jpg",
@@ -162,7 +162,7 @@ const getProductData = (category: string, id: string) => {
       "c10": {
         id: "c10",
         title: "Lip Gloss - Clear Shimmer",
-        price: 1699,
+        price: 167,
         compareAtPrice: 1999,
         category: "cosmetics",
         image: "/images/Cosmetics/10.jpg",
@@ -176,8 +176,8 @@ const getProductData = (category: string, id: string) => {
       },
       "c11": {
         id: "c11",
-        title: "Highlighter Palette - Glow Kit",
-        price: 4299,
+        title: "Highlighter Palette",
+        price: 1529,
         compareAtPrice: 4999,
         category: "cosmetics",
         image: "/images/Cosmetics/11.jpg",
@@ -192,7 +192,7 @@ const getProductData = (category: string, id: string) => {
       "c12": {
         id: "c12",
         title: "Makeup Brush Set",
-        price: 5999,
+        price: 1899,
         compareAtPrice: 7999,
         category: "cosmetics",
         image: "/images/Cosmetics/12.jpg",
@@ -209,7 +209,7 @@ const getProductData = (category: string, id: string) => {
       "2": {
         id: "2",
         title: "Educational Building Blocks",
-        price: 1899,
+        price: 150,
         compareAtPrice: 2599,
         category: "toys",
         image: "/images/Home/2.jpg",
@@ -224,7 +224,7 @@ const getProductData = (category: string, id: string) => {
       "5": {
         id: "5",
         title: "Premium Plush Teddy Bear",
-        price: 2199,
+        price: 599,
         compareAtPrice: 2999,
         category: "toys",
         image: "/images/Toys/2.jpg",
@@ -266,10 +266,25 @@ const getProductData = (category: string, id: string) => {
         inStock: true,
         stock: 60
       },
+      "c2": {
+        id: "c2",
+        title: "Teddy Bear",
+        price: 599,
+        compareAtPrice: 1299,
+        category: "toys",
+        image: "/images/Toys/2.jpg",
+        images: ["/images/Toys/2.jpg"],
+        rating: 4.9,
+        reviews: 210,
+        description: "Soft and cuddly teddy bear perfect for children of all ages",
+        features: ["Ages 0+", "Polyester material", "Stuffed animal", "Machine washable"],
+        inStock: true,
+        stock: 60
+      },
       "t3": {
         id: "t3",
         title: "Remote Control Car",
-        price: 4999,
+        price: 1599,
         compareAtPrice: 6499,
         category: "toys",
         image: "/images/Toys/3.jpg",
@@ -284,7 +299,7 @@ const getProductData = (category: string, id: string) => {
       "t4": {
         id: "t4",
         title: "Science Experiment Kit",
-        price: 3499,
+        price: 468,
         compareAtPrice: 4499,
         category: "toys",
         image: "/images/Toys/4.jpg",
@@ -299,7 +314,7 @@ const getProductData = (category: string, id: string) => {
       "t5": {
         id: "t5",
         title: "Dollhouse with Furniture",
-        price: 8999,
+        price: 2599,
         compareAtPrice: 11999,
         category: "toys",
         image: "/images/Toys/5.jpg",
@@ -314,7 +329,7 @@ const getProductData = (category: string, id: string) => {
       "t6": {
         id: "t6",
         title: "Jigsaw Puzzle - 1000 Pieces",
-        price: 1999,
+        price: 499,
         compareAtPrice: 2999,
         category: "toys",
         image: "/images/Toys/6.jpg",
@@ -329,7 +344,7 @@ const getProductData = (category: string, id: string) => {
       "t7": {
         id: "t7",
         title: "Art Set - 150 Pieces",
-        price: 2799,
+        price: 298,
         compareAtPrice: 3999,
         category: "toys",
         image: "/images/Toys/7.jpg",
@@ -344,7 +359,7 @@ const getProductData = (category: string, id: string) => {
       "t8": {
         id: "t8",
         title: "Balance Bike for Toddlers",
-        price: 7999,
+        price: 1119,
         compareAtPrice: 9999,
         category: "toys",
         image: "/images/Toys/8.jpg",
@@ -359,7 +374,7 @@ const getProductData = (category: string, id: string) => {
       "t9": {
         id: "t9",
         title: "Magnetic Tiles - 100 Pieces",
-        price: 5999,
+        price: 2599,
         compareAtPrice: 7999,
         category: "toys",
         image: "/images/Toys/9.jpg",
@@ -374,7 +389,7 @@ const getProductData = (category: string, id: string) => {
       "t10": {
         id: "t10",
         title: "Doctor Play Set",
-        price: 3299,
+        price: 349,
         compareAtPrice: 4299,
         category: "toys",
         image: "/images/Toys/10.jpg",
@@ -389,7 +404,7 @@ const getProductData = (category: string, id: string) => {
       "t11": {
         id: "t11",
         title: "Robot Dog",
-        price: 12999,
+        price: 980,
         compareAtPrice: 15999,
         category: "toys",
         image: "/images/Toys/11.jpg",
@@ -404,7 +419,7 @@ const getProductData = (category: string, id: string) => {
       "t12": {
         id: "t12",
         title: "Watercolor Paint Set",
-        price: 2299,
+        price: 1614,
         compareAtPrice: 2999,
         category: "toys",
         image: "/images/Toys/12.jpg",
@@ -421,7 +436,7 @@ const getProductData = (category: string, id: string) => {
       "3": {
         id: "3",
         title: "Gold Plated Chain Necklace",
-        price: 5999,
+        price: 1800,
         compareAtPrice: 8499,
         category: "accessories",
         image: "/images/Accessories/2.jpg",
@@ -435,18 +450,198 @@ const getProductData = (category: string, id: string) => {
       },
       "6": {
         id: "6",
-        title: "Diamond Stud Earring Set",
-        price: 15999,
-        compareAtPrice: 19999,
+        title: "Crystal Stud Earring Set",
+        price: 899,
+        compareAtPrice: 1999,
         category: "accessories",
         image: "/images/Home/3.jpg",
         images: ["/images/Home/3.jpg"],
         rating: 4.9,
         reviews: 142,
-        description: "Luxury diamond stud earring set with brilliant cut diamonds",
-        features: ["Real diamonds", "Luxury finish", "Elegant design", "Gift box included"],
+        description: "Elegant crystal stud earring set with sparkling cubic zirconia stones",
+        features: ["High-quality crystals", "Premium finish", "Elegant design", "Gift box included"],
         inStock: true,
         stock: 15
+      },
+      "c1": {
+        id: "c1",
+        title: "Gold Hoop Earrings",
+        price: 749,
+        compareAtPrice: 5999,
+        category: "accessories",
+        image: "/images/Accessories/1.jpg",
+        images: ["/images/Accessories/1.jpg"],
+        rating: 4.5,
+        reviews: 128,
+        description: "Elegant 14K gold plated hoop earrings with secure latch closure",
+        features: ["14K Gold Plated", "Hoop style", "2.5cm diameter", "Secure latch"],
+        inStock: true,
+        stock: 50
+      },
+      "c2": {
+        id: "c2",
+        title: "Minimalist Gold Necklace",
+        price: 1800,
+        compareAtPrice: 12999,
+        category: "accessories",
+        image: "/images/Accessories/2.jpg",
+        images: ["/images/Accessories/2.jpg"],
+        rating: 4.8,
+        reviews: 142,
+        description: "Simple and elegant 14K gold plated necklace with adjustable chain",
+        features: ["14K Gold Plated", "Pendant style", "45cm + 5cm extender", "Adjustable"],
+        inStock: true,
+        stock: 30
+      },
+      "c3": {
+        id: "c3",
+        title: "Leather Crossbody Bag",
+        price: 1289,
+        compareAtPrice: 15999,
+        category: "accessories",
+        image: "/images/Accessories/3.jpg",
+        images: ["/images/Accessories/3.jpg"],
+        rating: 4.7,
+        reviews: 89,
+        description: "Genuine leather crossbody bag with adjustable strap",
+        features: ["Genuine Leather", "Crossbody style", "20cm x 15cm x 8cm", "Brown color"],
+        inStock: true,
+        stock: 25
+      },
+      "c4": {
+        id: "c4",
+        title: "Silver Bangle Set",
+        price: 154,
+        compareAtPrice: 9999,
+        category: "accessories",
+        image: "/images/Accessories/4.jpg",
+        images: ["/images/Accessories/4.jpg"],
+        rating: 4.6,
+        reviews: 112,
+        description: "Set of three sterling silver bangles with different widths",
+        features: ["925 Sterling Silver", "3 bangles set", "5mm, 8mm, 12mm widths", "Silver color"],
+        inStock: true,
+        stock: 40
+      },
+      "c5": {
+        id: "c5",
+        title: "Designer Sunglasses",
+        price: 398,
+        compareAtPrice: 17999,
+        category: "accessories",
+        image: "/images/Accessories/5.jpg",
+        images: ["/images/Accessories/5.jpg"],
+        rating: 4.9,
+        reviews: 256,
+        description: "UV protection sunglasses with polarized lenses",
+        features: ["Acetate frame", "Polarized lenses", "100% UV400", "Black/Gradient"],
+        inStock: true,
+        stock: 35
+      },
+      "c6": {
+        id: "c6",
+        title: "Pearl Drop Earrings",
+        price: 328,
+        compareAtPrice: 12999,
+        category: "accessories",
+        image: "/images/Accessories/6.jpg",
+        images: ["/images/Accessories/6.jpg"],
+        rating: 4.7,
+        reviews: 87,
+        description: "Elegant freshwater pearl drop earrings with 14K gold accents",
+        features: ["Freshwater Pearl", "14K Gold accents", "2.5cm drop", "White/Gold"],
+        inStock: true,
+        stock: 28
+      },
+      "c7": {
+        id: "c7",
+        title: "Leather Wallet with RFID",
+        price: 799,
+        compareAtPrice: 6999,
+        category: "accessories",
+        image: "/images/Accessories/7.jpg",
+        images: ["/images/Accessories/7.jpg"],
+        rating: 4.4,
+        reviews: 203,
+        description: "Genuine leather wallet with RFID blocking technology",
+        features: ["Genuine Leather", "RFID Blocking", "8 card slots", "Brown color"],
+        inStock: true,
+        stock: 60
+      },
+      "c8": {
+        id: "c8",
+        title: "Silk Scarf",
+        price: 399,
+        compareAtPrice: 11999,
+        category: "accessories",
+        image: "/images/Accessories/8.jpg",
+        images: ["/images/Accessories/8.jpg"],
+        rating: 4.8,
+        reviews: 76,
+        description: "Luxury 100% silk scarf with hand-rolled edges",
+        features: ["100% Silk", "90cm x 90cm", "Floral Print", "Dry clean only"],
+        inStock: true,
+        stock: 32
+      },
+      "c9": {
+        id: "c9",
+        title: "Stainless Steel Watch",
+        price: 2227,
+        compareAtPrice: 19999,
+        category: "accessories",
+        image: "/images/Accessories/9.jpg",
+        images: ["/images/Accessories/9.jpg"],
+        rating: 4.9,
+        reviews: 184,
+        description: "Minimalist stainless steel watch with leather strap",
+        features: ["Stainless Steel & Leather", "Japanese Quartz", "5 ATM water resistance", "40mm case"],
+        inStock: true,
+        stock: 22
+      },
+      "c10": {
+        id: "c10",
+        title: "Cashmere Beanie",
+        price: 599,
+        compareAtPrice: 9999,
+        category: "accessories",
+        image: "/images/Accessories/10.jpg",
+        images: ["/images/Accessories/10.jpg"],
+        rating: 4.6,
+        reviews: 132,
+        description: "Luxury cashmere beanie for cold weather",
+        features: ["100% Cashmere", "Slouchy style", "Charcoal color", "One size fits most"],
+        inStock: true,
+        stock: 45
+      },
+      "c11": {
+        id: "c11",
+        title: "Leather Belt",
+        price: 985,
+        compareAtPrice: 7999,
+        category: "accessories",
+        image: "/images/Accessories/11.jpg",
+        images: ["/images/Accessories/11.jpg"],
+        rating: 4.5,
+        reviews: 167,
+        description: "Genuine leather belt with stainless steel buckle",
+        features: ["Genuine Leather", "Stainless Steel buckle", "Brown color", "30-40 inches"],
+        inStock: true,
+        stock: 38
+      },
+      "c12": {
+        id: "c12",
+        title: "Aviator Sunglasses",
+        price: 449,
+        compareAtPrice: 19999,
+        category: "accessories",
+        image: "/images/Accessories/12.jpg",
+        images: ["/images/Accessories/12.jpg"],
+        rating: 4.9,
+        reviews: 298,
+        description: "Classic aviator sunglasses with mirrored lenses",
+        features: ["Metal frame", "Mirrored lenses", "100% UVA/UVB", "Gold/Green"],
+        inStock: true,
+        stock: 28
       },
       "a1": {
         id: "a1",
@@ -633,7 +828,7 @@ const getProductData = (category: string, id: string) => {
       "4": {
         id: "4",
         title: "Genuine Leather Crossbody Bag",
-        price: 7999,
+        price: 2039,
         compareAtPrice: 10999,
         category: "bags",
         image: "/images/Home/4.jpg",
@@ -648,7 +843,7 @@ const getProductData = (category: string, id: string) => {
       "b1": {
         id: "b1",
         title: "Classic Leather Tote Bag",
-        price: 14999,
+        price: 2999,
         compareAtPrice: 19999,
         category: "bags",
         image: "/images/Bags/1.jpg",
@@ -663,7 +858,7 @@ const getProductData = (category: string, id: string) => {
       "b2": {
         id: "b2",
         title: "Minimalist Backpack",
-        price: 8999,
+        price: 3118,
         compareAtPrice: 11999,
         category: "bags",
         image: "/images/Bags/2.jpg",
@@ -678,7 +873,7 @@ const getProductData = (category: string, id: string) => {
       "b3": {
         id: "b3",
         title: "Designer Crossbody Bag",
-        price: 12999,
+        price: 3550,
         compareAtPrice: 15999,
         category: "bags",
         image: "/images/Bags/3.jpg",
@@ -693,7 +888,7 @@ const getProductData = (category: string, id: string) => {
       "b4": {
         id: "b4",
         title: "Laptop Backpack with USB Port",
-        price: 5999,
+        price: 1999,
         compareAtPrice: 7999,
         category: "bags",
         image: "/images/Bags/4.jpg",
@@ -708,7 +903,7 @@ const getProductData = (category: string, id: string) => {
       "b5": {
         id: "b5",
         title: "Leather Satchel Bag",
-        price: 16999,
+        price: 2767,
         compareAtPrice: 19999,
         category: "bags",
         image: "/images/Bags/5.jpg",
@@ -723,7 +918,7 @@ const getProductData = (category: string, id: string) => {
       "b6": {
         id: "b6",
         title: "Beach Tote Bag",
-        price: 3499,
+        price: 1200,
         compareAtPrice: 4499,
         category: "bags",
         image: "/images/Bags/6.jpg",
@@ -738,7 +933,7 @@ const getProductData = (category: string, id: string) => {
       "b7": {
         id: "b7",
         title: "Travel Duffel Bag",
-        price: 7999,
+        price: 1469,
         compareAtPrice: 9999,
         category: "bags",
         image: "/images/Bags/7.jpg",
@@ -753,7 +948,7 @@ const getProductData = (category: string, id: string) => {
       "b8": {
         id: "b8",
         title: "Gym Bag with Shoe Compartment",
-        price: 4499,
+        price: 1190,
         compareAtPrice: 5999,
         category: "bags",
         image: "/images/Bags/11.jpg",
@@ -768,7 +963,7 @@ const getProductData = (category: string, id: string) => {
       "b9": {
         id: "b9",
         title: "Evening Clutch Bag",
-        price: 8999,
+        price: 1198,
         compareAtPrice: 10999,
         category: "bags",
         image: "/images/Bags/9.jpg",
@@ -783,7 +978,7 @@ const getProductData = (category: string, id: string) => {
       "b10": {
         id: "b10",
         title: "Canvas Messenger Bag",
-        price: 6999,
+        price: 1944,
         compareAtPrice: 8999,
         category: "bags",
         image: "/images/Bags/12.jpg",
@@ -798,7 +993,7 @@ const getProductData = (category: string, id: string) => {
       "b11": {
         id: "b11",
         title: "Hiking Backpack",
-        price: 11999,
+        price: 1599,
         compareAtPrice: 14999,
         category: "bags",
         image: "/images/Bags/10.jpg",
@@ -813,7 +1008,7 @@ const getProductData = (category: string, id: string) => {
       "b12": {
         id: "b12",
         title: "Luxury Handbag",
-        price: 29999,
+        price: 2499,
         compareAtPrice: 39999,
         category: "bags",
         image: "/images/Bags/13.jpg",
@@ -846,7 +1041,7 @@ export default function ProductDetail() {
       setProduct(productData);
       
       if (productData) {
-        document.title = `${productData.title} | ABU Style Stories`;
+        document.title = `${productData.title} | ABU Accessories`;
       }
     }
   }, [category, id]);

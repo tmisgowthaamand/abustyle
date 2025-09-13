@@ -7,7 +7,7 @@ const FeaturedProducts = () => {
     {
       id: "1",
       title: "Premium Rose Lipstick Set",
-      price: 2499,
+      price: 509,
       compareAtPrice: 3499,
       category: "cosmetics" as ProductCategory,
       tags: ["New", "Bestseller"],
@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
     {
       id: "2",
       title: "Educational Building Blocks",
-      price: 1899,
+      price: 150,
       compareAtPrice: 2599,
       category: "toys" as ProductCategory,
       tags: ["Educational", "Bestseller"],
@@ -30,7 +30,7 @@ const FeaturedProducts = () => {
     {
       id: "3",
       title: "Gold Plated Chain Necklace",
-      price: 5999,
+      price: 1800,
       compareAtPrice: 8499,
       category: "accessories" as ProductCategory,
       tags: ["New", "Luxury"],
@@ -41,7 +41,7 @@ const FeaturedProducts = () => {
     {
       id: "4",
       title: "Genuine Leather Crossbody Bag",
-      price: 7999,
+      price: 2039,
       compareAtPrice: 10999,
       category: "bags" as ProductCategory,
       tags: ["Premium", "Handmade"],
@@ -52,7 +52,7 @@ const FeaturedProducts = () => {
     {
       id: "5",
       title: "Premium Plush Teddy Bear",
-      price: 2199,
+      price: 599,
       compareAtPrice: 2999,
       category: "toys" as ProductCategory,
       tags: ["Soft", "Cuddly"],
@@ -62,11 +62,11 @@ const FeaturedProducts = () => {
     },
     {
       id: "6",
-      title: "Diamond Stud Earring Set",
-      price: 15999,
-      compareAtPrice: 19999,
+      title: "Crystal Stud Earring Set",
+      price: 899,
+      compareAtPrice: 1999,
       category: "accessories" as ProductCategory,
-      tags: ["Luxury", "Elegant"],
+      tags: ["Elegant", "Affordable"],
       image: "/images/Home/3.jpg",
       rating: 4.9,
       reviews: 142,

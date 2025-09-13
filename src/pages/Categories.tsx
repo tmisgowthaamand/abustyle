@@ -132,7 +132,7 @@ const Categories = () => {
           {/* Additional Info Section */}
           <div className="bg-muted rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              Why Shop with ABU Style Stories?
+              Why Shop with ABU Accessories?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div className="text-center">

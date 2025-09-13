@@ -13,12 +13,12 @@ import { Product } from '@/types/product';
 // Mock data - replace with actual data fetching
 const mockProducts: Product[] = [
   {
-    id: "t1",
+    id: 'c1',
     category: 'toys',
-    title: "Building Blocks Set - 120 Pieces",
-    description: "Colorful building blocks for creative play and learning",
-    brand: "BlockMasters",
-    price: 2999,
+    title: 'Building Blocks Set - 120 Pieces',
+    description: 'Colorful building blocks for creative construction play',
+    brand: 'BlockMaster',
+    price: 193,
     compareAtPrice: 3999,
     rating: 4.7,
     reviews: 215,
@@ -35,40 +35,40 @@ const mockProducts: Product[] = [
       material: "Plastic",
       type: "Building Blocks"
     },
-    createdAt: '2023-03-05T09:45:00Z',
-    updatedAt: '2023-03-05T09:45:00Z'
-  },
-  {
-    id: "t2",
-    category: 'toys',
-    title: "Plush Teddy Bear",
-    description: "Soft and cuddly teddy bear for children of all ages",
-    brand: "CuddleBuddies",
-    price: 2499,
-    compareAtPrice: 3499,
-    rating: 4.9,
-    reviews: 210,
-    stock: 60,
-    image: "/images/Toys/2.jpg",
-    images: [
-      "/images/Toys/2.jpg"
-    ],
-    tags: ["plush", "teddy", "stuffed"],
-    attrs: {
-      ageRange: "0+",
-      material: "Polyester",
-      type: "Stuffed Animal"
-    },
     createdAt: '2023-03-10T11:20:00Z',
     updatedAt: '2023-03-10T11:20:00Z'
   },
   {
-    id: "t3",
+    id: 'c2',
     category: 'toys',
-    title: "Remote Control Car",
-    description: "Fast and durable RC car with 2.4GHz remote control",
-    brand: "SpeedRacers",
-    price: 4999,
+    title: 'Teddy Bear',
+    description: 'Soft and cuddly teddy bear perfect for children of all ages',
+    brand: 'CuddleFriend',
+    price: 599,
+    compareAtPrice: 1299,
+    rating: 4.9,
+    reviews: 210,
+    stock: 60,
+    image: '/images/Toys/2.jpg',
+    images: [
+      '/images/Toys/2.jpg'
+    ],
+    tags: ['teddy bear', 'soft toy', 'plush'],
+    attrs: {
+      ageRange: '0+',
+      material: 'Polyester',
+      type: 'Stuffed Animal'
+    },
+    createdAt: '2023-03-08T14:30:00Z',
+    updatedAt: '2023-03-08T14:30:00Z'
+  },
+  {
+    id: 'c3',
+    category: 'toys',
+    title: 'Remote Control Car',
+    description: 'High-speed remote control racing car with LED lights',
+    brand: 'SpeedRacer',
+    price: 1599,
     compareAtPrice: 6499,
     rating: 4.5,
     reviews: 189,
@@ -87,12 +87,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-15T14:30:00Z'
   },
   {
-    id: "t4",
+    id: 'c4',
     category: 'toys',
-    title: "Science Experiment Kit",
-    description: "Educational science kit with 50+ experiments",
-    brand: "Young Scientists",
-    price: 3499,
+    title: 'Science Experiment Kit',
+    description: 'Educational science kit with 50+ experiments',
+    brand: 'ScienceFun',
+    price: 468,
     compareAtPrice: 4499,
     rating: 4.8,
     reviews: 156,
@@ -111,12 +111,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-20T10:15:00Z'
   },
   {
-    id: "t5",
+    id: 'c5',
     category: 'toys',
-    title: "Dollhouse with Furniture",
-    description: "Beautiful wooden dollhouse with complete furniture set",
-    brand: "DreamHomes",
-    price: 8999,
+    title: 'Dollhouse with Furniture',
+    description: 'Three-story dollhouse with complete furniture set',
+    brand: 'DreamHome',
+    price: 2599,
     compareAtPrice: 11999,
     rating: 4.9,
     reviews: 245,
@@ -135,12 +135,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-28T13:45:00Z'
   },
   {
-    id: "t6",
+    id: 'c6',
     category: 'toys',
-    title: "Jigsaw Puzzle - 1000 Pieces",
-    description: "Challenging jigsaw puzzle with beautiful landscape image",
-    brand: "PuzzleMasters",
-    price: 1999,
+    title: 'Jigsaw Puzzle - 1000 Pieces',
+    description: 'Beautiful landscape jigsaw puzzle for family fun',
+    brand: 'PuzzleMaster',
+    price: 499,
     compareAtPrice: 2999,
     rating: 4.6,
     reviews: 178,
@@ -159,12 +159,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-03-12T09:20:00Z'
   },
   {
-    id: "t7",
+    id: 'c7',
     category: 'toys',
-    title: "Art Set - 150 Pieces",
-    description: "Complete art set with various coloring and drawing tools",
-    brand: "ArtisticKids",
-    price: 2799,
+    title: 'Art Set - 150 Pieces',
+    description: 'Complete art set with crayons, markers, and paper',
+    brand: 'ArtMaster',
+    price: 298,
     compareAtPrice: 3999,
     rating: 4.7,
     reviews: 198,
@@ -183,12 +183,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-03-01T11:10:00Z'
   },
   {
-    id: "t8",
+    id: 'c8',
     category: 'toys',
-    title: "Balance Bike for Toddlers",
-    description: "Wooden balance bike for learning to ride",
-    brand: "FirstRide",
-    price: 7999,
+    title: 'Balance Bike for Toddlers',
+    description: 'Safe and sturdy balance bike for learning to ride',
+    brand: 'KidRide',
+    price: 1119,
     compareAtPrice: 9999,
     rating: 4.8,
     reviews: 167,
@@ -207,12 +207,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-10T15:30:00Z'
   },
   {
-    id: "t9",
+    id: 'c9',
     category: 'toys',
-    title: "Magnetic Tiles - 100 Pieces",
-    description: "Colorful magnetic building tiles for creative construction",
-    brand: "MagBlocks",
-    price: 5999,
+    title: 'Magnetic Tiles - 100 Pieces',
+    description: 'Colorful magnetic building tiles for STEM learning',
+    brand: 'MagniPlay',
+    price: 2599,
     compareAtPrice: 7999,
     rating: 4.9,
     reviews: 312,
@@ -231,12 +231,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-15T10:20:00Z'
   },
   {
-    id: "t10",
+    id: 'c10',
     category: 'toys',
-    title: "Doctor Play Set",
-    description: "Complete doctor role play set with medical tools",
-    brand: "Pretend & Play",
-    price: 3299,
+    title: 'Doctor Play Set',
+    description: 'Complete doctor kit with medical tools and accessories',
+    brand: 'PlayDoctor',
+    price: 349,
     compareAtPrice: 4299,
     rating: 4.7,
     reviews: 145,
@@ -255,12 +255,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-05T14:15:00Z'
   },
   {
-    id: "t11",
+    id: 'c11',
     category: 'toys',
-    title: "Robot Dog",
-    description: "Interactive robotic dog with realistic movements and sounds",
-    brand: "TechPets",
-    price: 12999,
+    title: 'Robot Dog',
+    description: 'Interactive robot dog with voice commands and tricks',
+    brand: 'RoboFriend',
+    price: 980,
     compareAtPrice: 15999,
     rating: 4.6,
     reviews: 231,
@@ -279,12 +279,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-25T16:40:00Z'
   },
   {
-    id: "t12",
+    id: 'c12',
     category: 'toys',
-    title: "Watercolor Paint Set",
-    description: "Complete watercolor painting set with 36 colors",
-    brand: "ArtisticKids",
-    price: 2299,
+    title: 'Watercolor Paint Set',
+    description: 'Professional watercolor set with brushes and paper',
+    brand: 'ArtistPro',
+    price: 1614,
     compareAtPrice: 2999,
     rating: 4.8,
     reviews: 187,
@@ -320,7 +320,7 @@ export default function Toys() {
 
   // Update document title
   useEffect(() => {
-    document.title = "Toys Collection | ABU Style Stories";
+    document.title = "Toys Collection | ABU Accessories";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

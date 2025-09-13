@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | ABU Style Stories',
+  title: 'Privacy Policy | ABU Accessories',
   description: 'Learn how we protect your personal information and respect your privacy.',
 };
 
@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
       
       <section className="mb-12">
         <p className="mb-6">
-          At ABU Style Stories, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase from our store.
+          At ABU Accessories, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase from our store.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">1. Information We Collect</h2>

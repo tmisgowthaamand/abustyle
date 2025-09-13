@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: PolicyPageProps): Promise<Met
   const title = pageTitles[policy] || 'Page Not Found';
   
   return {
-    title: `${title} | ABU Style Stories`,
-    description: `View our ${title.toLowerCase()} for ABU Style Stories.`,
+    title: `${title} | ABU Accessories`,
+    description: `View our ${title.toLowerCase()} for ABU Accessories.`,
   };
 }
 

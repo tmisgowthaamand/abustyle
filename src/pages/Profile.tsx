@@ -27,7 +27,7 @@ const Profile = () => {
   const [editedProfile, setEditedProfile] = useState(userProfile);
 
   useEffect(() => {
-    document.title = "My Profile | ABU Style Stories";
+    document.title = "My Profile | ABU Accessories";
   }, []);
 
   const handleEdit = () => {

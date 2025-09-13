@@ -13,12 +13,12 @@ import { Product } from '@/types/product';
 // Mock data - replace with actual data fetching
 const mockProducts: Product[] = [
   {
-    id: 'a1',
+    id: 'c1',
     category: 'accessories',
     title: 'Gold Hoop Earrings',
-    description: 'Elegant 14K gold plated hoop earrings with secure latch closure',
-    brand: 'Luxury Accessories',
-    price: 4599,
+    description: 'Classic gold-plated hoop earrings for everyday elegance',
+    brand: 'GoldenStyle',
+    price: 749,
     compareAtPrice: 5999,
     rating: 4.5,
     reviews: 128,
@@ -40,12 +40,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-15T10:30:00Z'
   },
   {
-    id: 'a2',
+    id: 'c2',
     category: 'accessories',
     title: 'Minimalist Gold Necklace',
-    description: 'Simple and elegant 14K gold plated necklace with adjustable chain',
-    brand: 'Minimalist Accessories',
-    price: 8999,
+    description: 'Delicate gold chain necklace with minimalist design',
+    brand: 'MinimalLux',
+    price: 1800,
     compareAtPrice: 12999,
     rating: 4.8,
     reviews: 142,
@@ -65,12 +65,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-20T14:45:00Z'
   },
   {
-    id: 'a3',
+    id: 'c3',
     category: 'accessories',
     title: 'Leather Crossbody Bag',
-    description: 'Genuine leather crossbody bag with adjustable strap',
-    brand: 'Urban Chic',
-    price: 12999,
+    description: 'Premium leather crossbody bag with adjustable strap',
+    brand: 'LeatherCraft',
+    price: 1289,
     compareAtPrice: 15999,
     rating: 4.7,
     reviews: 89,
@@ -90,12 +90,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-10T11:20:00Z'
   },
   {
-    id: 'a4',
+    id: 'c4',
     category: 'accessories',
     title: 'Silver Bangle Set',
-    description: 'Set of three sterling silver bangles with different widths',
-    brand: 'Silver Essence',
-    price: 7599,
+    description: 'Set of 3 sterling silver bangles with intricate patterns',
+    brand: 'SilverElegance',
+    price: 154,
     compareAtPrice: 9999,
     rating: 4.6,
     reviews: 112,
@@ -115,12 +115,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-25T09:15:00Z'
   },
   {
-    id: 'a5',
+    id: 'c5',
     category: 'accessories',
     title: 'Designer Sunglasses',
-    description: 'UV protection sunglasses with polarized lenses',
-    brand: 'SunStyle',
-    price: 12999,
+    description: 'Trendy designer sunglasses with UV protection',
+    brand: 'StyleVision',
+    price: 398,
     compareAtPrice: 17999,
     rating: 4.9,
     reviews: 256,
@@ -140,12 +140,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-15T13:30:00Z'
   },
   {
-    id: 'a6',
+    id: 'c6',
     category: 'accessories',
     title: 'Pearl Drop Earrings',
-    description: 'Elegant freshwater pearl drop earrings with 14K gold accents',
-    brand: 'Pearl Essence',
-    price: 9599,
+    description: 'Elegant pearl drop earrings for special occasions',
+    brand: 'PearlLux',
+    price: 328,
     compareAtPrice: 12999,
     rating: 4.7,
     reviews: 87,
@@ -165,12 +165,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-05T16:20:00Z'
   },
   {
-    id: 'a7',
+    id: 'c7',
     category: 'accessories',
     title: 'Leather Wallet with RFID',
     description: 'Genuine leather wallet with RFID blocking technology',
-    brand: 'LeatherCraft',
-    price: 4999,
+    brand: 'SecureStyle',
+    price: 799,
     compareAtPrice: 6999,
     rating: 4.4,
     reviews: 203,
@@ -190,12 +190,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-30T10:45:00Z'
   },
   {
-    id: 'a8',
+    id: 'c8',
     category: 'accessories',
     title: 'Silk Scarf',
-    description: 'Luxury 100% silk scarf with hand-rolled edges',
-    brand: 'Silk & Co',
-    price: 8999,
+    description: 'Luxurious silk scarf with artistic print design',
+    brand: 'SilkArt',
+    price: 399,
     compareAtPrice: 11999,
     rating: 4.8,
     reviews: 76,
@@ -215,12 +215,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-18T14:10:00Z'
   },
   {
-    id: 'a9',
+    id: 'c9',
     category: 'accessories',
     title: 'Stainless Steel Watch',
-    description: 'Minimalist stainless steel watch with leather strap',
-    brand: 'TimeCraft',
-    price: 15999,
+    description: 'Modern stainless steel watch with chronograph features',
+    brand: 'TimeElite',
+    price: 2227,
     compareAtPrice: 19999,
     rating: 4.9,
     reviews: 184,
@@ -240,12 +240,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-08T11:30:00Z'
   },
   {
-    id: 'a10',
+    id: 'c10',
     category: 'accessories',
     title: 'Cashmere Beanie',
-    description: 'Luxury cashmere beanie for cold weather',
+    description: 'Soft cashmere beanie for winter warmth and style',
     brand: 'WinterLux',
-    price: 7999,
+    price: 599,
     compareAtPrice: 9999,
     rating: 4.6,
     reviews: 132,
@@ -265,12 +265,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-01-28T09:20:00Z'
   },
   {
-    id: 'a11',
+    id: 'c11',
     category: 'accessories',
     title: 'Leather Belt',
-    description: 'Genuine leather belt with stainless steel buckle',
-    brand: 'LeatherCraft',
-    price: 5999,
+    description: 'Classic leather belt with metal buckle',
+    brand: 'BeltCraft',
+    price: 985,
     compareAtPrice: 7999,
     rating: 4.5,
     reviews: 167,
@@ -290,12 +290,12 @@ const mockProducts: Product[] = [
     updatedAt: '2023-02-12T15:40:00Z'
   },
   {
-    id: 'a12',
+    id: 'c12',
     category: 'accessories',
     title: 'Aviator Sunglasses',
     description: 'Classic aviator sunglasses with mirrored lenses',
-    brand: 'Ray-Ban',
-    price: 14999,
+    brand: 'AviatorStyle',
+    price: 449,
     compareAtPrice: 19999,
     rating: 4.9,
     reviews: 298,
@@ -332,7 +332,7 @@ export default function Accessories() {
 
   // Update document title
   useEffect(() => {
-    document.title = "Accessories Collection | ABU Style Stories";
+    document.title = "Accessories Collection | ABU Accessories";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

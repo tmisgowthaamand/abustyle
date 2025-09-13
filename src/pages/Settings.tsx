@@ -58,7 +58,7 @@ const Settings = () => {
   });
 
   useEffect(() => {
-    document.title = "Settings | ABU Style Stories";
+    document.title = "Settings | ABU Accessories";
   }, []);
 
   const handleSettingChange = (key: string, value: any) => {
