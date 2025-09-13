@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { CategoryHero } from "@/components/CategoryHero";
@@ -329,6 +329,11 @@ export default function Cosmetics() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sortOption, setSortOption] = useState("featured");
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   // Use mock data instead of API call
   const products = mockProducts;
