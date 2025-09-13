@@ -8,6 +8,7 @@ export default function TermsAndConditions() {
   
   useEffect(() => {
     document.title = 'Terms & Conditions | ABU Accessories';
+    window.scrollTo(0, 0);
   }, []);
 
   return (

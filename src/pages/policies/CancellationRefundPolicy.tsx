@@ -8,6 +8,7 @@ export default function CancellationRefundPolicy() {
   
   useEffect(() => {
     document.title = 'Cancellation & Refund Policy | ABU Accessories';
+    window.scrollTo(0, 0);
   }, []);
 
   return (

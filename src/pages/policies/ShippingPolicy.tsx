@@ -8,6 +8,7 @@ export default function ShippingPolicy() {
   
   useEffect(() => {
     document.title = 'Shipping Policy | ABU Accessories';
+    window.scrollTo(0, 0);
   }, []);
 
   return (

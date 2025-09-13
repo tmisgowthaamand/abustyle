@@ -1,9 +1,38 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Layout } from "@/components/Layout";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ArrowLeft } from "lucide-react";
 
 const About = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" }
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-16">
+    <Layout>
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-center gap-4 mb-6">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 bg-white hover:bg-gray-50 border-gray-300"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back
+          </Button>
+        </div>
+        <Breadcrumbs items={breadcrumbItems} />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">Our Story</h1>
         
@@ -113,7 +142,8 @@ const About = () => {
           </Button>
         </div>
       </div>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

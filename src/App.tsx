@@ -16,6 +16,8 @@ import Orders from "./pages/Orders";
 import OrderDetails from "./pages/OrderDetails";
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
+import Categories from "./pages/Categories";
+import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
@@ -35,6 +37,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
+            <Route path="/categories" element={<Categories />} />
             {/* Category Routes */}
             <Route path="/cosmetics" element={<Cosmetics />} />
             <Route path="/toys" element={<Toys />} />
@@ -51,7 +54,7 @@ const App = () => (
             <Route path="/settings" element={<Settings />} />
             
             {/* Footer Links */}
-            <Route path="/contact" element={<div>Contact Page</div>} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="/shipping" element={<ShippingPolicy />} />
