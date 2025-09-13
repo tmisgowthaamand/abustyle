@@ -112,11 +112,10 @@ export function ProductCard({
           <img
             src={image}
             alt={name}
-            className="absolute inset-0 w-full h-full object-contain object-center bg-white"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.onerror = null;
-              target.src = '/images/placeholder.svg';
+              target.src = '/images/placeholder-product.svg';
             }}
           />
         ) : (

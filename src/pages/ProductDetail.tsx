@@ -914,8 +914,7 @@ export default function ProductDetail() {
                   className="max-w-full max-h-full object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src = '/images/placeholder.svg';
+                    target.src = '/images/placeholder-product.svg';
                   }}
                 />
               </div>
